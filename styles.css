@@ -461,6 +461,87 @@ section h2 {
 
 
 
+
+
+
+
+/* Estilo para la sección de referencias de alumnos */
+#referencias-alumnos {
+    text-align: center;
+    padding: 40px;
+    background-color: #1e1e1e; /* Fondo oscuro similar */
+    color: white; /* Color del texto en blanco */
+}
+
+#referencias-alumnos h2 {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    color: #f4f4f4; /* Color del título */
+}
+
+.opiniones-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px; /* Ajustar el espacio entre opiniones */
+}
+
+.opinión {
+    background-color: #2a2a2a; /* Color de fondo de las opiniones */
+    color: white; /* Cambia el color del texto a blanco */
+    text-decoration: none; /* Elimina el subrayado del enlace */
+    border-radius: 15px; /* Bordes redondeados */
+    padding: 30px; /* Espaciado interno */
+    width: 300px; /* Ancho de las opiniones */
+    text-align: center; /* Centrar texto */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Sombra */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transiciones suaves */
+}
+
+.opinión:hover {
+    transform: translateY(-10px); /* Efecto de desplazamiento al pasar el ratón */
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5); /* Sombra más intensa al pasar el ratón */
+    color: lightgray; /* Cambia el color al pasar el ratón, si deseas */
+}
+
+.foto-alumno {
+    width: 90px; /* Ancho de la foto */
+    height: 80px; /* Alto de la foto */
+    border-radius: 50%; /* Hace la imagen circular */
+    margin: 0 auto 10px; /* Alineación centrada con margen inferior */
+    object-fit: cover; /* Asegura que la imagen llene el contenedor */
+    object-position: center; /* Centra la imagen dentro del contenedor */
+}
+
+.oculta {
+    display: none; /* Oculta las opiniones inicialmente */
+}
+
+#ver-mas,
+#ver-menos {
+    display: inline-block; /* Mostrar como bloque en línea */
+    padding: 10px 20px;
+    background-color: #f0db4f; /* Color de fondo amarillo */
+    color: #1e1e1e; /* Color del texto oscuro */
+    border: none; /* Sin borde */
+    border-radius: 5px; /* Esquinas redondeadas */
+    font-size: 1.1rem; /* Tamaño de la fuente */
+    cursor: pointer; /* Cambia el cursor al pasar el mouse */
+    transition: background-color 0.3s ease; /* Transición suave al cambiar de color */
+    margin-top: 20px; /* Margen superior */
+}
+
+#ver-mas:hover,
+#ver-menos:hover {
+    background-color: #e5c842; /* Color de fondo más oscuro al pasar el mouse */
+}
+
+
+
+
+
+
+
 /* Estilos para la parte de contactos */
 #social-media {
     padding: 50px;

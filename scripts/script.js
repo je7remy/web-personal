@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const textElement = document.getElementById("dynamic-text");
     if (textElement) {
         const texts = [
-            "Auditorías de ciberseguridad.",
+            "Desarrollo de videojuegos en Godot Engine.",
             "Desarrollo web y Configuración/reparación de equipos de TI.",
             "Programación con Python y Bash.",
             "Hacking ético, ciberseguridad, etc.",
