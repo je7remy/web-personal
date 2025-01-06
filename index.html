@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Landing page personal de un informático especializado en ciberseguridad">
+    <title>👋 Jeremy De La Cruz</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    
+
+    <!-- Video de fondo -->
+    <section class="principal">
+       
+
+        <video autoplay muted loop id="bg-video" playsinline>
+            <source src="images/presentacion6.mp4" type="video/mp4">
+            <source src="images/presentacion6.webm" type="video/webm">
+            Tu navegador no soporta la reproducción de video.
+        </video>
+
+        <div class="principal-contenido">
+            <h1>Hola, soy Jeremy</h1>
+            <h2>Tecnico e Ingeniero en Informática especializado en Ciberseguridad</h2>
+            <p id="dynamic-text">Auditorías de ciberseguridad.</p>
+            <a href="#skills" class="cta-button">¿Cómo te puedo ayudar?</a>
+        </div>
+    </section>
+
+    <section id="sobre-mi">
+        <h2>¿Quién soy?</h2>
+        <p>Soy un informático freelance especializado en ciberseguridad.</p>
+        <p>Mi experiencia incluye una amplia gama de habilidades y conocimientos en la informática.</p>
+        <p>No dudes en <a href="https://wa.me/+18295221765" target="_blank" style="font-weight: bold; color: white; text-decoration: none;">contactar</a>.</p>
+        <a href="https://www.linkedin.com/in/jeremy-de-la-cruz-0a49b9237/" class="cta-button" target="_blank">
+            <i class="bi bi-linkedin"></i> Conóceme
+        </a>
+    </section>
+
+
+    <section id="skills">
+        <h2>Habilidades</h2>
+        <div class="skills-grid">
+            <div class="skill-item" data-skill="Programación y Desarrollo">
+                <h3>Programación y Desarrollo</h3>
+                <p>Desarrollo en C, C#, HTML5, CSS, Godot Engine y Ren'Py.</p>
+                <a href="#" class="cta-button">Más información</a>
+            </div>
+            <div class="skill-item" data-skill="Diseño y Software">
+                <h3>Diseño y Software</h3>
+                <p>Dominio de Adobe Photoshop, Blender, Bootstrap y Microsoft Office.</p>
+                <a href="#" class="cta-button">Más información</a>
+            </div>
+            <div class="skill-item" data-skill="Redes y Servicio Técnico">
+                <h3>Redes y Servicio Técnico</h3>
+                <p>Configuración de redes y armado de cables UTP (categorías 4, 5, 6).</p>
+                <a href="#" class="cta-button">Más información</a>
+            </div>
+        </div>
+    </section>
+    
+    <div id="popup" class="popup">
+        <div class="popup-content">
+            <span class="close-button">&times;</span>
+            <h3 id="popup-title"></h3>
+            <p id="popup-text"></p>
+        </div>
+    </div>
+    
+    <section id="servicios">
+        <h2>Mis Servicios</h2>
+        <div class="services-list">
+            
+            <div class="service-item" data-delay="0.2s">
+                <h3>Desarrollo de Videojuegos</h3>
+                <p>Creación de videojuegos en Godot Engine y Ren'Py, enfocados en calidad y eficiencia.</p>
+            </div>
+            <div class="service-item" data-delay="0.4s">
+                <h3>Soporte Técnico</h3>
+                <p>Reparación básica de teléfonos y computadoras, además de configuración de equipos TI.</p>
+            </div>
+            <div class="service-item" data-delay="0.6s">
+                <h3>Linux y Sistemas Operativos</h3>
+                <p>Administración, instalación y optimización de sistemas Linux.</p>
+            </div>
+            <div class="service-item" data-delay="0.8s">
+                <h3>Asesoría en Informática General</h3>
+                <p>Soporte y soluciones tecnológicas personalizadas para individuos y empresas.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="seccion-galeria">
+        <div class="image-gallery">
+            <!-- Lista completa de íconos - Primera repetición -->
+            <a target="_blank">
+                <img src="images/python.webp" alt="Python">
+            </a>
+            <a target="_blank">
+                <img src="images/bash.png" alt="Bash">
+            </a>
+            <a target="_blank">
+                <img src="images/kali.png" alt="Kali Linux">
+            </a>
+            <a target="_blank">
+                <img src="images/js.png" alt="JavaScript">
+            </a>
+            <a target="_blank">
+                <img src="images/secure.png" alt="Seguridad">
+            </a>
+            <a target="_blank">
+                <img src="images/tux.webp" alt="Linux Tux">
+            </a>
+            <a target="_blank">
+                <img src="images/redes.png" alt="Redes">
+            </a>
+            <a target="_blank">
+                <img src="images/html.png" alt="HTML">
+            </a>
+            <a target="_blank">
+                <img src="images/css.png" alt="CSS">
+            </a>
+            <a target="_blank">
+                <img src="images/docker.webp" alt="Docker">
+            </a>
+            <a target="_blank">
+                <img src="images/photoshop.png" alt="Photoshop">
+            </a>
+            <a target="_blank">
+                <img src="images/blender.png" alt="Blender">
+            </a>
+            <a target="_blank">
+                <img src="images/bootstrap.png" alt="Bootstrap">
+            </a>
+            <a target="_blank">
+                <img src="images/office.png" alt="Microsoft Office">
+            </a>
+            <a target="_blank">
+                <img src="images/c.png" alt="C">
+            </a>
+            <a target="_blank">
+                <img src="images/csharp.png" alt="C#">
+            </a>
+            <a target="_blank">
+                <img src="images/godot.png" alt="Godot Engine">
+            </a>
+            <a target="_blank">
+                <img src="images/renpy.png" alt="Ren'Py">
+            </a>
+            <!-- Segunda repetición -->
+            <a target="_blank">
+                <img src="images/python.webp" alt="Python">
+            </a>
+            <a target="_blank">
+                <img src="images/bash.png" alt="Bash">
+            </a>
+            <a target="_blank">
+                <img src="images/kali.png" alt="Kali Linux">
+            </a>
+            <a target="_blank">
+                <img src="images/js.png" alt="JavaScript">
+            </a>
+            <a target="_blank">
+                <img src="images/secure.png" alt="Seguridad">
+            </a>
+            <a target="_blank">
+                <img src="images/tux.webp" alt="Linux Tux">
+            </a>
+            <a target="_blank">
+                <img src="images/redes.png" alt="Redes">
+            </a>
+            <a target="_blank">
+                <img src="images/html.png" alt="HTML">
+            </a>
+            <a target="_blank">
+                <img src="images/css.png" alt="CSS">
+            </a>
+            <a target="_blank">
+                <img src="images/docker.webp" alt="Docker">
+            </a>
+            <a target="_blank">
+                <img src="images/photoshop.png" alt="Photoshop">
+            </a>
+            <a target="_blank">
+                <img src="images/blender.png" alt="Blender">
+            </a>
+            <a target="_blank">
+                <img src="images/bootstrap.png" alt="Bootstrap">
+            </a>
+            <a target="_blank">
+                <img src="images/office.png" alt="Microsoft Office">
+            </a>
+            <a target="_blank">
+                <img src="images/c.png" alt="C">
+            </a>
+            <a target="_blank">
+                <img src="images/csharp.png" alt="C#">
+            </a>
+            <a target="_blank">
+                <img src="images/godot.png" alt="Godot Engine">
+            </a>
+            <a target="_blank">
+                <img src="images/renpy.png" alt="Ren'Py">
+            </a>
+            <!-- Tercera repetición -->
+            <a target="_blank">
+                <img src="images/python.webp" alt="Python">
+            </a>
+            <a target="_blank">
+                <img src="images/bash.png" alt="Bash">
+            </a>
+            <a target="_blank">
+                <img src="images/kali.png" alt="Kali Linux">
+            </a>
+            <a target="_blank">
+                <img src="images/js.png" alt="JavaScript">
+            </a>
+            <a target="_blank">
+                <img src="images/secure.png" alt="Seguridad">
+            </a>
+            <a target="_blank">
+                <img src="images/tux.webp" alt="Linux Tux">
+            </a>
+            <a target="_blank">
+                <img src="images/redes.png" alt="Redes">
+            </a>
+            <a target="_blank">
+                <img src="images/html.png" alt="HTML">
+            </a>
+            <a target="_blank">
+                <img src="images/css.png" alt="CSS">
+            </a>
+            <a target="_blank">
+                <img src="images/docker.webp" alt="Docker">
+            </a>
+            <a target="_blank">
+                <img src="images/photoshop.png" alt="Photoshop">
+            </a>
+            <a target="_blank">
+                <img src="images/blender.png" alt="Blender">
+            </a>
+            <a target="_blank">
+                <img src="images/bootstrap.png" alt="Bootstrap">
+            </a>
+            <a target="_blank">
+                <img src="images/office.png" alt="Microsoft Office">
+            </a>
+            <a target="_blank">
+                <img src="images/c.png" alt="C">
+            </a>
+            <a target="_blank">
+                <img src="images/csharp.png" alt="C#">
+            </a>
+            <a target="_blank">
+                <img src="images/godot.png" alt="Godot Engine">
+            </a>
+            <a target="_blank">
+                <img src="images/renpy.png" alt="Ren'Py">
+            </a>
+        </div>
+    </section>
+    
+   
+    
+    
+
+    <section id="projects">
+        <h2>Mis Proyectos</h2>
+        <div class="projects-grid">
+            <div class="project-item">
+                <h3>Proyecto 1</h3>
+                <p>Proyecto 1</p>
+                <br>
+                <a href="" target="_blank">
+                    <img src="" alt="Proyecto 1" class="project-img">
+                </a>
+                          
+            </div>
+            <div class="project-item">
+                <h3>Proyecto 1</h3>
+                <p>Proyecto 1</p>
+                <br>
+                <a href="" target="_blank">
+                    <img src="" alt="Proyecto 1" class="project-img">
+                </a>
+            </div>
+            <div class="project-item">
+                <h3>Proyecto 1</h3>
+                <p>Proyecto 1</p>
+                <br>
+                <a href="" target="_blank">
+                    <img src="" alt="Proyecto 1" class="project-img">
+                </a>
+            </div>
+        </div>
+    </section>
+
+   
+      
+
+    <section id="social-media">
+        <h3>Sígueme en mis redes sociales</h3>
+        <div class="social-icons">
+            <a href="https://www.instagram.com/je7remy/" target="_blank" class="social-icon">
+                <i class="bi bi-instagram"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/jeremy-de-la-cruz-0a49b9237/" target="_blank" class="social-icon">
+                <i class="bi bi-linkedin"></i>
+            </a>
+            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=je7remy@gmail.com" class="social-icon" target="_blank">
+                <i class="bi bi-envelope"></i>
+            </a>
+            
+            
+        </div>
+    </section>
+    
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-4 text-start">
+                    <p>&copy; 2025 - Todos los derechos reservados</p>
+                </div>
+                
+                <div class="col-4 text-end">
+                    <p style="color: white; font-weight: bold;">
+			            Powered By 
+			            <a href="https://www.linkedin.com/in/jeremy-de-la-cruz-0a49b9237/" target="_blank" rel="noopener noreferrer" style="color: white; font-weight: bold;">
+                            Jeremy De La Cruz
+			            </a>
+		            </p>
+                </div>
+            </div>
+        </div>
+        <!-- Efecto de olas -->
+        <div class="wave-container">
+            <div class="wave wave1"></div>
+            <div class="wave wave2"></div>
+        </div>
+    </footer>
+    
+    <script src="scripts/script.js"></script>
+    <script src="scripts/popup.js"></script>
+    <script src="scripts/ver-mas.js"></script>
+
+</body>
+</html>

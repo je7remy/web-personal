@@ -1,0 +1,742 @@
+/* Con el asterisco aplico estilos a toda la web */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow-x: hidden;
+    font-family: 'Fira Code', monospace; /* Aplica Fira Code a todo el cuerpo */
+}
+
+h1, h2, h3, p {
+    font-family: 'Fira Code', monospace; /* Aplica Fira Code a elementos específicos */
+    
+}
+
+
+
+.principal {
+    position: relative;
+    height: 100vh; /* La sección ocupe toda la altura de la pantalla */
+    overflow: hidden; /* Evitamos el desbordamiento del contenido */
+    color: #fff;
+    text-align: center;
+}
+
+#bg-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Aseguramos que el video cubra todo el fondo */
+    filter: brightness(0.5); /* Oscurece el video para mejorar la legibilidad del texto */
+    pointer-events: none; /* Evitamos que el video interfiera con los clics */
+}
+
+.principal-contenido {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Centra el contenido vertical y horizontalmente */
+    text-align: center;
+    color: #fff;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0); /* Fondo completamente transparente */
+    border-radius: 10px; /* Agrega bordes redondeados para el contenedor */
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 15px 30px;
+    background-color: #f0b700;
+    color: #333;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 1.2em;
+    margin: 10px; /* Espacio alrededor del botón */
+    transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out; /* Añade transición suave para el zoom y el cambio de color */
+}
+
+.cta-button:hover {
+    background-color: #0096c7;
+    transform: scale(1.05); /* Aplica el efecto de zoom */
+}
+
+#sobre-mi {
+    padding: 100px; /* Aumenta el padding superior e inferior */
+    height: 600px; /* Ajusta la altura total de la sección */
+    background-image: url('images/yoo.jpg'); /* Agrega la imagen de fondo */
+    background-size: cover; /* La imagen cubrirá toda la sección */
+    background-position: center 25%; /* Bajamos un poco la imagen, a mayor porcentaje, más abajo estará */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    position: relative; /* Permite usar un overlay */
+    color: #f9f9f9; /* Color del texto claro */
+    text-align: left;
+}
+
+
+#sobre-mi::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.272); /* Degradado oscuro sobre la imagen */
+    z-index: 1; /* Capa por encima de la imagen */
+}
+
+#sobre-mi h2, #sobre-mi p, #sobre-mi .cta-button {
+    position: relative;
+    z-index: 2; /* Asegura que el texto esté por encima del overlay */
+}
+
+#sobre-mi h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+#sobre-mi p {
+    font-size: 1.2em;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+#sobre-mi .cta-button {
+    display: inline-flex;
+    align-items: center;
+    padding: 15px 30px;
+    background-color: #f7c600; /* Color amarillo para el botón */
+    color: #333; /* Color del texto del botón */
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 1.2em;
+    transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+#sobre-mi .cta-button i {
+    margin-right: 8px;
+    font-size: 1.5em;
+}
+
+#sobre-mi .cta-button:hover {
+    background-color: #f0b700; /* Amarillo más oscuro al pasar el cursor */
+    transform: scale(1.05);
+}
+
+
+/* Estilos generales de la sección */
+#servicios {
+    position: relative;
+    padding: 50px 20px; /* Padding ajustado para la sección */
+    background: linear-gradient(135deg, #4a4a4a, #222); /* Fondo degradado para la sección */
+    color: #fff; /* Color del texto blanco para contraste */
+}
+
+/* Overlay para mejorar la legibilidad del texto */
+#servicios::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7); /* Overlay más oscuro */
+    z-index: 1;
+}
+
+/* Estilos del título */
+#servicios h2 {
+    position: relative;
+    z-index: 2;
+    font-size: 2.5em; /* Aumenta el tamaño del título */
+    margin-bottom: 30px; /* Espacio inferior aumentado */
+    text-align: center; /* Centra el texto horizontalmente */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8); /* Sombra para mejorar la legibilidad */
+}
+
+/* Contenedor de servicios */
+#servicios .services-list {
+    position: relative;
+    z-index: 2;
+    display: grid; /* Usar grid para un mejor diseño */
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Columnas con ancho mínimo */
+    gap: 30px; /* Espacio entre las cartas */
+    justify-items: center; /* Centra las cartas */
+    padding: 20px; /* Espacio interno para el contenedor */
+}
+
+/* Estilos de las cartas de servicio */
+#servicios .service-item {
+    background-color: rgba(62, 62, 59, 0.9); /* Fondo oscuro semitransparente */
+    color: #fff; /* Color del texto blanco para contraste */
+    padding: 20px; /* Espacio interno de las cartas */
+    border-radius: 15px; /* Bordes redondeados más pronunciados */
+    box-shadow: 0px 8px 12px rgba(0, 0, 0, 0.3); /* Sombra más pronunciada */
+    text-align: center; /* Alinea el texto al centro */
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease, filter 0.3s ease; /* Transiciones suaves */
+    width: 100%; /* Asegura que las cartas ocupen todo el ancho */
+    max-width: 350px; /* Ajusta el tamaño máximo de las cartas */
+    opacity: 0; /* Inicialmente invisibles */
+    transform: translateY(20px); /* Desplazadas hacia abajo */
+}
+
+/* Efecto de zoom al pasar el cursor */
+#servicios .service-item:hover {
+    transform: translateY(-10px) scale(1.05); /* Efecto de desplazamiento y aumento al pasar el cursor */
+    box-shadow: 0px 16px 24px rgba(0, 0, 0, 0.4); /* Aumenta la sombra al pasar el cursor */
+    background-color: rgba(80, 80, 80, 0.9); /* Cambia el color de fondo al pasar el cursor */
+    filter: brightness(1.1); /* Aumenta el brillo al pasar el cursor */
+}
+
+/* Estilos para el título de cada carta */
+#servicios .service-item h3 {
+    margin-top: 10px; /* Espacio superior para el título */
+    margin-bottom: 10px; /* Espacio inferior para el título */
+    font-size: 1.5em; /* Tamaño de fuente para el título */
+}
+
+/* Estilos para la descripción en cada carta */
+#servicios .service-item p {
+    font-size: 1em; /* Tamaño de fuente para la descripción */
+    line-height: 1.6; /* Espacio entre líneas para mejorar la legibilidad */
+}
+
+/* Animación de entrada para las cartas */
+#servicios .service-item.visible {
+    opacity: 1; /* Se vuelve visible */
+    transform: translateY(0); /* Vuelve a la posición original */
+}
+
+/* Estilos para íconos */
+#servicios .service-icon {
+    max-width: 80px; /* Tamaño fijo para los íconos de servicio */
+    margin-bottom: 15px; /* Espacio entre el ícono y el texto */
+    filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.5)); /* Efecto de sombra en los íconos */
+}
+
+
+
+
+#seccion-galeria {
+    position: relative;
+    padding: 30px;
+    background-color: #191919; /* Fondo oscuro */
+    overflow: hidden; /* Para ocultar el desbordamiento */
+}
+
+.image-gallery {
+    display: flex; /* Usar flexbox para alinear las imágenes */
+    animation: scroll 80s linear infinite; /* Animación de desplazamiento más lenta */
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateX(0); /* Comienza en la posición original */
+    }
+    100% {
+        transform: translateX(-100%); /* Desplazamiento completo hacia la izquierda */
+    }
+}
+
+.image-gallery a {
+    margin: 0 10px; /* Espacio entre imágenes */
+}
+
+.image-gallery img {
+    width: 100px; /* Ajusta el tamaño según sea necesario */
+    height: auto; /* Mantiene la proporción original */
+    transition: transform 0.3s; /* Suave efecto al pasar el cursor */
+}
+
+/* Efecto de zoom al pasar el cursor */
+.image-gallery a:hover img {
+    transform: scale(1.1); /* Aumenta un poco el tamaño al pasar el cursor */
+}
+
+
+.visible-images {
+    display: flex;
+    animation: slide 60s linear infinite; /* Podemos ajustar la duración para controlar la velocidad */
+}
+
+@keyframes slide {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-25%); /* Desplaza a la izquierda la mitad del ancho total */
+    }
+}
+
+.visible-images img {
+    width: 2%; /* Ajusta el tamaño de las imágenes */
+    flex-shrink: 0; /* Evita que las imágenes se reduzcan */
+}
+
+
+/* Estilos para la sección "Projects" */
+
+#projects {
+    padding: 50px;
+    background-color: #222; /* Fondo oscuro para la sección */
+}
+
+#projects h2 {
+    font-size: 2.5em;
+    margin-bottom: 30px;
+    text-align: center;
+    color: #f9f9f9; /* Color del texto del título claro */
+}
+
+.projects-grid {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+    color: #f9f9f9; /* Color del texto del título claro */
+}
+
+.project-item {
+    text-align: center;
+    background-color: #333; /* Fondo oscuro para los elementos del proyecto */
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3); /* Sombra más pronunciada */
+    width: 30%;
+    padding: 20px;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.project-img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.project-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 8px 12px rgba(0, 0, 0, 0.5); /* Aumenta la sombra para destacar el efecto de zoom */
+}
+
+/* Estilos para las secciones */
+section {
+    padding: 50px;
+    background-color: #fff;
+}
+
+section h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+
+
+.services-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; /* Espacio entre los elementos de servicio */
+    justify-content: center; /* Centra los elementos de servicio horizontalmente */
+}
+
+.service-item {
+    text-align: center;
+    padding: 20px;
+    background-color: #f0f0f0;
+    border-radius: 10px;
+    width: 30%;
+}
+
+.service-icon {
+    max-width: 80px; /* Tamaño fijo para los íconos de servicio */
+}
+
+/* Popup styles */
+.popup {
+    display: none;
+    position: fixed;
+    z-index: 999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    justify-content: center;
+    align-items: center;
+}
+
+.popup-content {
+    background-color: #2b2412;
+    color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    width: 50%;
+    max-width: 600px;
+}
+
+.popup-content p {
+    white-space: pre-line;
+}
+
+
+.close-button {
+    color: #222;
+    font-size: 24px;
+    font-weight: bold;
+    position: absolute;
+    right: 20px;
+    top: 10px;
+    cursor: pointer;
+}
+
+#skills {
+    padding: 50px;
+    background-color: #222; /* Fondo oscuro para la sección */
+    color: #f9f9f9; /* Color del texto claro */
+    text-align: center;
+}
+
+#skills h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+.skills-grid {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.skill-item {
+    text-align: center;
+    padding: 20px;
+    background-color: #333; /* Fondo oscuro para los ítems */
+    color: #f9f9f9; /* Color del texto claro */
+    border-radius: 10px;
+    width: 30%;
+    margin-bottom: 20px;
+    transition: transform 0.3s ease; /* Transición suave para el zoom */
+}
+
+.skill-item:hover {
+    transform: scale(1.05); /* Aumenta el tamaño al hacer hover */
+}
+
+.skill-item h3 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.skill-item p {
+    font-size: 1em;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+.skill-item .cta-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #f7c600; /* Color amarillo para el botón */
+    color: #222; /* Color del texto del botón */
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 1em;
+    transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.skill-item .cta-button:hover {
+    background-color: #f0b700; /* Amarillo más oscuro al pasar el cursor */
+    transform: scale(1.05);
+}
+
+
+
+/* Estilos para la parte de contactos */
+#social-media {
+    padding: 50px;
+    background-color: #222; /* Fondo oscuro para la sección */
+    color: #f9f9f9; /* Color del texto claro */
+    text-align: center;
+}
+
+#social-media h3 {
+    margin-bottom: 20px;
+    font-size: 1.8em;
+    color: #f9f9f9; /* Color del texto del encabezado claro */
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Espacio entre los iconos */
+}
+
+.social-icon {
+    color: #f9f9f9; /* Color de los iconos */
+    font-size: 2em; /* Tamaño de los iconos */
+    transition: color 0.3s ease-in-out; /* Efecto de transición */
+}
+
+.social-icon:hover {
+    color: #f7c600; /* Color amarillo al pasar el cursor */
+}
+
+
+
+/* Estilos para el footer */
+footer {
+    position: relative;
+    background-color: #282828;
+    color: #fff;
+    padding: 20px 0; /* Ajusta el padding superior e inferior */
+    overflow: hidden; /* Asegúrate de que el efecto no se desborde */
+}
+
+/* Asegúrate de que el texto esté encima del efecto */
+footer .container {
+    position: relative;
+    z-index: 2;
+}
+
+/* Estilos para el contenedor de las olas */
+.wave-container {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 120px; /* Ajusta la altura de la ola */
+    overflow: hidden;
+    z-index: 1; /* Asegúrate de que el efecto esté detrás del contenido */
+}
+
+/* Efecto de olas */
+.wave {
+    position: absolute;
+    left: 50%;
+    width: 200%;
+    height: 100px; /* Por aquí puedo ajustar la altura de la ola */
+    background: linear-gradient(to right, rgba(180, 170, 26, 0.893) 0%, rgba(200, 161, 35, 0.938) 50%, rgb(192, 184, 34) 100%);
+    border-radius: 50%;
+    transform: translateX(-50%);
+    animation: wave 10s linear infinite;
+}
+
+.wave.wave2 {
+    height: 150px; /* Mayor altura para olas más pronunciadas */
+    background: linear-gradient(to right, rgba(210, 193, 26, 0.982) 0%, rgba(200, 185, 29, 0.776) 50%, rgba(200, 196, 34, 0.2) 100%);
+    animation: wave 15s linear infinite;
+}
+
+@keyframes wave {
+    0% {
+        transform: translateX(-50%) translateY(0);
+    }
+    50% {
+        transform: translateX(-50%) translateY(20px); /* Mayor desplazamiento vertical para olas más pronunciadas */
+    }
+    100% {
+        transform: translateX(-50%) translateY(0);
+    }
+}
+
+/* Estilos para alinear el texto y los íconos */
+footer .row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; 
+    position: relative;
+    z-index: 2;
+    text-align: center; /* Centra el texto dentro de cada columna */
+}
+
+footer .col-4 {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Centra el contenido dentro de cada columna */
+}
+
+footer .text-start {
+    text-align: left;
+    flex: 1; /* Ocupa el espacio disponible a la izquierda */
+    padding-left: 20px; /* Espacio adicional a la izquierda */
+}
+
+footer .text-end {
+    text-align: right;
+    flex: 1; /* Ocupa el espacio disponible a la derecha */
+    padding-right: 20px; /* Espacio adicional a la derecha */
+}
+
+footer .text-center {
+    text-align: center;
+    flex: 1; /* Ocupa el espacio central */
+}
+
+footer .text-center i {
+    margin: 0 10px; /* Espacio entre los íconos */
+}
+
+/* Opcional: Estilos para los íconos en el footer */
+footer i {
+    font-size: 1.5em;
+    color: #fff; /* Color blanco para los íconos */
+}
+
+@media (max-width: 768px) {
+    nav {
+        justify-content: space-around; /* Espaciar los elementos de navegación */
+    }
+    
+    ul {
+        display: flex; /* Asegura que los elementos estén en una fila */
+        flex-direction: row; /* Asegurar que los elementos estén en fila */
+        justify-content: center; /* Centrar elementos en la fila */
+        padding: 0; /* Eliminar el padding predeterminado de la lista */
+        margin: 0; /* Eliminar el margen predeterminado de la lista */
+        list-style-type: none; /* Eliminar los puntos de la lista */
+    }
+    
+    li {
+        flex: 1; /* Hacer que cada elemento ocupe espacio igual */
+        font-size: 0.6rem; /* Ajusta este valor según el tamaño deseado */
+        white-space: nowrap; /* Evitar saltos de línea en los elementos */
+    }
+
+    .principal-contenido {
+        padding: 0px; /* Espaciado interno para evitar que el contenido toque los bordes */
+        text-align: center; /* Centrar el texto */
+        background-color: #22222200; /* Fondo oscuro elegante */
+        color: #f0f0f0; /* Texto claro para mejorar legibilidad */
+        margin: 10px auto; /* Margen automático para centrar el div */
+        
+    }
+    
+    .principal-contenido h1 {
+        font-size: 2rem; /* Tamaño del encabezado */
+        margin-bottom: 10px; /* Espacio debajo del encabezado */
+    }
+    
+    .principal-contenido h2 {
+        font-size: 1.3rem; /* Tamaño del subtítulo */
+        margin-bottom: 15px; /* Espacio debajo del subtítulo */
+    }
+    
+    .principal-contenido p {
+        font-size: 1rem; /* Tamaño del texto */
+        margin-bottom: 20px; /* Espacio debajo del párrafo */
+    }
+    
+    .principal-contenido .cta-button {
+        font-size: 1.1rem; /* Tamaño del botón */
+        padding: 12px 20px; /* Espaciado interno del botón */
+        background-color: #f0db4f; /* Color del botón */
+        color: #333; /* Color del texto del botón */
+        border: none; /* Sin borde para un estilo minimalista */
+        border-radius: 5px; /* Bordes redondeados para el botón */
+        text-decoration: none; /* Eliminar subrayado en el enlace */
+        display: inline-block; /* Hacer que el botón sea en línea pero como bloque */
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Sombra suave para el botón */
+        transition: background-color 0.3s ease; /* Transición suave al interactuar */
+    }
+    
+    .principal-contenido .cta-button:hover {
+        background-color: #e8c547; /* Cambiar el color en hover para interacción */
+        color: #222; /* Color del texto en hover */
+    }
+    
+
+
+
+    .skills-grid {
+        display: flex;
+        flex-direction: column; /* Coloca los elementos en columna */
+        align-items: center; /* Centra los elementos */
+    }
+
+    .skill-item {
+        width: 90%; /* Ajusta el ancho de los elementos */
+        margin: 10px 0; /* Espaciado entre habilidades */
+    }
+
+    .projects-grid {
+        display: flex;
+        flex-direction: column; /* Coloca los proyectos en columna */
+        align-items: center; /* Centra los elementos */
+    }
+
+    .project-item {
+        width: 90%; /* Ajusta el ancho de los proyectos */
+        margin: 10px 0; /* Espaciado entre proyectos */
+    }
+
+
+    #sobre-mi {
+        padding: 20px;
+        background-color: #222; /* Fondo oscuro elegante */
+        color: #f0f0f0; /* Texto claro para mejorar legibilidad */
+        text-align: center; /* Centrar todo el texto */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra sutil para darle profundidad */
+        max-width: 100%; /* Asegurar que no se desborde en móviles */
+        margin: 0; /* Eliminar márgenes superior e inferior */
+    }
+    
+    #sobre-mi h2 {
+        font-size: 1.8rem; /* Ajustar el tamaño del encabezado */
+        margin-bottom: 15px; /* Añadir espacio debajo del título */
+        color: #ffffff; /* Color amarillo suave que resalta */
+    }
+    
+    #sobre-mi p {
+        font-size: 1.1rem; /* Ajustar el tamaño del texto */
+        margin-bottom: 15px; /* Espaciado entre los párrafos */
+        line-height: 1.6; /* Mejorar la legibilidad aumentando el espacio entre líneas */
+    }
+    
+    #sobre-mi .cta-button {
+        font-size: 1.2rem;
+        padding: 12px 20px; /* Botón más grande y cómodo de tocar */
+        background-color: #f0db4f; /* Botón amarillo destacado */
+        color: #333; /* Texto oscuro en el botón */
+        border: none; /* Sin borde para un estilo minimalista */
+        border-radius: 5px; /* Bordes redondeados para el botón */
+        text-decoration: none; /* Eliminar subrayado en el enlace */
+        display: inline-block; /* Botón en línea pero bloque */
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Sombra suave para destacar */
+        transition: background-color 0.3s ease; /* Transición suave al interactuar */
+        margin-top: 20px; /* Espacio entre el botón y el contenido anterior */
+    }
+    
+    #sobre-mi .cta-button:hover {
+        background-color: #e8c547; /* Cambiar el color en hover para interacción */
+        color: #222; /* Color del texto en hover */
+    }
+    
+    
+
+    #servicios {
+        display: none;
+    }
+
+    
+
+    .visible-images img {
+        width: 60px; /* Tamaño de las imágenes en móviles pequeños */
+        height: auto; /* Mantener la relación de aspecto */
+    }
+
+    #seccion-galeria {
+        padding: 10px; /* Reducir espaciado interno en móviles pequeños */
+    }
+
+
+}
