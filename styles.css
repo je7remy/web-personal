@@ -73,7 +73,7 @@ h1, h2, h3, p {
 #sobre-mi {
     padding: 100px; /* Aumenta el padding superior e inferior */
     height: 600px; /* Ajusta la altura total de la sección */
-    background-image: url('images/yoo.jpg'); /* Agrega la imagen de fondo */
+    background-image: url('images/j2.jpg'); /* Agrega la imagen de fondo */
     background-size: cover; /* La imagen cubrirá toda la sección */
     background-position: center 25%; /* Bajamos un poco la imagen, a mayor porcentaje, más abajo estará */
     background-repeat: no-repeat; /* Evita que la imagen se repita */
