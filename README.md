@@ -83,7 +83,7 @@ Se aceptan mejoras en:
 - Mejoras en accesibilidad y SEO  
 
 ## 📜 Licencia | License  
-MIT License - Ver [LICENSE](LICENSE) para detalles completos  
+MIT License - Ver [MIT](LICENSE) para detalles completos  
 
 ---  
 
