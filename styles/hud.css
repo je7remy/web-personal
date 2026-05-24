@@ -1,0 +1,62 @@
+/* ============================================================
+   HUD — overlays globales, cursor custom y detalles finales
+   ============================================================ */
+
+/* ---- Cursor custom (solo desktop, vanilla effects.js) ---- */
+.fx-cursor,
+.fx-cursor__ring {
+    position: fixed;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    z-index: var(--z-cursor);
+    will-change: transform;
+    transition: opacity var(--dur-fast) var(--ease-out);
+}
+
+.fx-cursor {
+    width: 6px;
+    height: 6px;
+    background: var(--green-1);
+    border-radius: 50%;
+    box-shadow: 0 0 12px var(--green-1);
+    mix-blend-mode: screen;
+}
+
+.fx-cursor__ring {
+    width: 34px;
+    height: 34px;
+    border: 1px solid var(--border-3);
+    border-radius: 50%;
+    background: rgba(0, 255, 106, 0.04);
+    transition:
+        width var(--dur) var(--ease-out),
+        height var(--dur) var(--ease-out),
+        border-color var(--dur) var(--ease-out),
+        background var(--dur) var(--ease-out),
+        opacity var(--dur-fast) var(--ease-out);
+    backdrop-filter: invert(0.02);
+}
+
+.fx-cursor__ring.is-hover {
+    width: 56px;
+    height: 56px;
+    border-color: var(--green-1);
+    background: rgba(0, 255, 106, 0.08);
+}
+
+@media (hover: none) and (pointer: coarse) {
+    .fx-cursor,
+    .fx-cursor__ring { display: none; }
+}
+
+/* Mantener cursor del sistema (no esconder por completo) */
+html, body { cursor: auto; }
+
+/* ---- Section divider helper (reutilizable) ---- */
+
+/* ---- Ajustes finos sobre overlays globales ---- */
+@media (prefers-reduced-motion: reduce) {
+    .fx-cursor,
+    .fx-cursor__ring { display: none; }
+}

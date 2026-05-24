@@ -1,0 +1,107 @@
+/* ============================================================
+   TOKENS — Hacker Green Premium
+   Variables CSS globales: paleta, tipografia, espaciado,
+   sombras, glows y easings. No contiene reglas, solo tokens.
+   ============================================================ */
+
+:root {
+    /* ---------- Paleta ---------- */
+    --bg-0:           #08090A;     /* fondo profundo */
+    --bg-1:           #0B0F0C;     /* capa 1 */
+    --bg-2:           #10161222;    /* capa 2 sutil */
+    --bg-elev:        #0F1411;     /* superficie elevada */
+
+    --green-1:        #00FF6A;     /* acento primario */
+    --green-2:        #39FF14;     /* acento alterno */
+    --green-3:        #22FF88;     /* glow / aura */
+    --green-muted:    #3FA66B;     /* texto auxiliar */
+    --green-deep:     #0F3B22;     /* fondos verdes oscuros */
+
+    --text-1:         #E8EAE6;     /* texto principal (blanco roto) */
+    --text-2:         #B7BFB6;     /* texto secundario */
+    --text-3:         #8A938C;     /* texto terciario */
+    --text-mute:      #5C8A6F;     /* mute verdoso */
+
+    --border-1:       rgba(0, 255, 106, 0.12);
+    --border-2:       rgba(0, 255, 106, 0.22);
+    --border-3:       rgba(0, 255, 106, 0.38);
+    --border-soft:    rgba(232, 234, 230, 0.06);
+
+    --glass-bg:       rgba(255, 255, 255, 0.02);
+    --glass-bg-2:     rgba(15, 20, 17, 0.55);
+
+    /* ---------- Glows / Shadows ---------- */
+    --glow-sm:        0 0 8px  rgba(0, 255, 106, 0.35);
+    --glow-md:        0 0 18px rgba(0, 255, 106, 0.40);
+    --glow-lg:        0 0 36px rgba(0, 255, 106, 0.45);
+    --glow-xl:        0 0 80px rgba(0, 255, 106, 0.30);
+
+    --shadow-soft:    0 6px 24px rgba(0, 0, 0, 0.45);
+    --shadow-card:    0 8px 30px rgba(0, 0, 0, 0.55),
+                      inset 0 1px 0 rgba(255, 255, 255, 0.03);
+    --shadow-deep:    0 24px 60px rgba(0, 0, 0, 0.65);
+
+    /* ---------- Tipografia ---------- */
+    --font-display:   'Space Grotesk', 'Inter', system-ui, sans-serif;
+    --font-mono:      'JetBrains Mono', 'Fira Code', ui-monospace, monospace;
+    --font-body:      'Space Grotesk', 'Inter', system-ui, sans-serif;
+
+    --fs-xs:          0.75rem;
+    --fs-sm:          0.875rem;
+    --fs-base:        1rem;
+    --fs-md:          1.125rem;
+    --fs-lg:          1.375rem;
+    --fs-xl:          1.75rem;
+    --fs-2xl:         2.25rem;
+    --fs-3xl:         3rem;
+    --fs-4xl:         4rem;
+    --fs-hero:        clamp(2.5rem, 6vw, 5.5rem);
+
+    --lh-tight:       1.1;
+    --lh-normal:      1.5;
+    --lh-loose:       1.7;
+
+    --tr-tight:       -0.02em;
+    --tr-mono:        0.04em;
+    --tr-wide:        0.16em;
+
+    /* ---------- Espaciado ---------- */
+    --sp-1:           0.25rem;
+    --sp-2:           0.5rem;
+    --sp-3:           0.75rem;
+    --sp-4:           1rem;
+    --sp-5:           1.5rem;
+    --sp-6:           2rem;
+    --sp-7:           3rem;
+    --sp-8:           4rem;
+    --sp-9:           6rem;
+    --sp-10:          8rem;
+
+    --radius-sm:      4px;
+    --radius-md:      10px;
+    --radius-lg:      16px;
+    --radius-pill:    999px;
+
+    /* ---------- Layout ---------- */
+    --container:      1240px;
+    --container-sm:   960px;
+    --nav-height:     72px;
+    --nav-height-scrolled: 60px;
+
+    /* ---------- Easings & duraciones ---------- */
+    --ease-out:       cubic-bezier(0.22, 1, 0.36, 1);
+    --ease-in-out:    cubic-bezier(0.65, 0, 0.35, 1);
+    --ease-snappy:    cubic-bezier(0.34, 1.56, 0.64, 1);
+    --dur-fast:       180ms;
+    --dur:            300ms;
+    --dur-slow:       600ms;
+    --dur-loop:       8s;
+
+    /* ---------- Z-index ---------- */
+    --z-base:         1;
+    --z-decor:        5;
+    --z-content:      10;
+    --z-nav:          80;
+    --z-popup:        100;
+    --z-cursor:       9999;
+}

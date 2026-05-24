@@ -10,14 +10,59 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- Fuentes premium -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <!-- CSS base original (queda como fallback / capa 0) -->
     <link rel="stylesheet" href="styles.css">
+
+    <!-- Rediseno hacker-green (override) -->
+    <link rel="stylesheet" href="styles/tokens.css">
+    <link rel="stylesheet" href="styles/base.css">
+    <link rel="stylesheet" href="styles/nav.css">
+    <link rel="stylesheet" href="styles/hero.css">
+    <link rel="stylesheet" href="styles/sections.css">
+    <link rel="stylesheet" href="styles/hud.css">
 </head>
 <body>
-    
+
+    <!-- Scan line global -->
+    <div class="scan-line" aria-hidden="true"></div>
+
+    <!-- Navbar -->
+    <nav class="site-nav" id="site-nav" aria-label="Navegacion principal">
+        <div class="site-nav__inner">
+            <a href="#top" class="site-nav__brand" aria-label="Inicio">
+                <span class="site-nav__brand-prompt">&gt;_</span>
+                <span>~/JEREMY</span>
+                <span class="site-nav__brand-cursor" aria-hidden="true"></span>
+            </a>
+
+            <ul class="site-nav__links" id="site-nav-links">
+                <li><a class="site-nav__link" href="#sobre-mi"><span class="site-nav__link-num">01.</span>Sobre&nbsp;mi</a></li>
+                <li><a class="site-nav__link" href="#skills"><span class="site-nav__link-num">02.</span>Skills</a></li>
+                <li><a class="site-nav__link" href="#servicios"><span class="site-nav__link-num">03.</span>Servicios</a></li>
+                <li><a class="site-nav__link" href="#projects"><span class="site-nav__link-num">04.</span>Proyectos</a></li>
+                <li><a class="site-nav__link" href="#referencias-alumnos"><span class="site-nav__link-num">05.</span>Referencias</a></li>
+                <li><a class="site-nav__link" href="#social-media"><span class="site-nav__link-num">06.</span>Contacto</a></li>
+            </ul>
+
+            <div class="site-nav__status" aria-label="Estado: online">
+                <span class="site-nav__status-dot" aria-hidden="true"></span>
+                <span>ONLINE</span>
+            </div>
+
+            <button class="site-nav__toggle" id="site-nav-toggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="site-nav-links">
+                <span aria-hidden="true"></span>
+            </button>
+        </div>
+    </nav>
 
     <!-- Video de fondo -->
-    <section class="principal">
-       
+    <section class="principal" id="top">
 
         <video autoplay muted loop id="bg-video" playsinline>
             <source src="images/presentacion6.mp4" type="video/mp4">
@@ -25,45 +70,98 @@
             Tu navegador no soporta la reproducción de video.
         </video>
 
+        <!-- Capas decorativas hero -->
+        <div class="hero-fx" aria-hidden="true">
+            <div class="hero-fx__veil"></div>
+            <div class="hero-fx__grid"></div>
+            <div class="hero-fx__glow"></div>
+            <div class="hero-fx__vignette"></div>
+        </div>
+
+        <!-- HUD esquinas -->
+        <div class="hero-hud" aria-hidden="true">
+            <div class="hero-hud__corner hero-hud__corner--tl"></div>
+            <div class="hero-hud__corner hero-hud__corner--tr"></div>
+            <div class="hero-hud__corner hero-hud__corner--bl"></div>
+            <div class="hero-hud__corner hero-hud__corner--br"></div>
+            <div class="hero-hud__coord hero-hud__coord--tl">LAT: 19.2218&deg; N</div>
+            <div class="hero-hud__coord hero-hud__coord--tr">LON: 70.5290&deg; W</div>
+            <div class="hero-hud__coord hero-hud__coord--bl">[ SYS_OK ] &middot; v1.0.0</div>
+            <div class="hero-hud__coord hero-hud__coord--br">SESSION_ID: 0xJM-7C</div>
+        </div>
+
         <div class="principal-contenido">
-            <h1>Hola, soy Jeremy</h1>
+            <div class="hero-prompt mono">
+                <span class="hero-prompt__symbol">&gt;_</span>
+                <span class="hero-prompt__path">~/PORTFOLIO</span>
+                <span class="hero-prompt__sep">//</span>
+                <span class="hero-prompt__tag">INIT</span>
+            </div>
+            <h1><span class="hero-h1-greet">Hola, soy</span> <span class="hero-h1-name">Jeremy</span></h1>
             <h2>Técnico e Ingeniero en Informática especializado en Ciberseguridad</h2>
-            <p id="dynamic-text">Auditorías de ciberseguridad.</p>
-            <a href="#skills" class="cta-button">¿Cómo te puedo ayudar?</a>
+            <div class="hero-typed">
+                <span class="hero-typed__caret mono">&gt;</span>
+                <p id="dynamic-text">Auditorías de ciberseguridad.</p>
+            </div>
+            <a href="#skills" class="cta-button hero-cta" data-magnetic>
+                <span class="hero-cta__label">¿Cómo te puedo ayudar?</span>
+                <span class="hero-cta__arrow" aria-hidden="true">&rarr;</span>
+            </a>
+        </div>
+
+        <!-- Indicador de scroll -->
+        <div class="hero-scroll mono" aria-hidden="true">
+            <span class="hero-scroll__label">SCROLL</span>
+            <div class="hero-scroll__line"><span></span></div>
         </div>
     </section>
 
     <section id="sobre-mi">
-        <h2>¿Quién soy?</h2>
-        <p>Soy un informático freelance especializado en ciberseguridad.</p>
-        <p>Mi experiencia incluye una amplia gama de habilidades y conocimientos en la informática.</p>
-        <p>No dudes en <a href="https://wa.me/+18295221765" target="_blank" style="font-weight: bold; color: white; text-decoration: none;">contactar</a>.</p>
-        <a href="https://www.linkedin.com/in/jeremy-josé-de-la-cruz-pérez-0a49b9237/" class="cta-button" target="_blank">
-            <i class="bi bi-linkedin"></i> Conóceme
-        </a>
-        <a href="https://drive.google.com/file/d/1KXLGLcYbH3rQi8wAJnVISu22ofjVN06L/view?usp=sharing" class="cta-button" target="_blank">
-            <i class="bi bi-file-earmark-person-fill"></i> Puedes Revisar mi CV
-        </a>
+        <div class="section-wrap container-x">
+            <span class="section-label reveal">~/SOBRE-MI</span>
+            <h2 class="section-title reveal" data-delay="1">¿Quién soy?</h2>
+            <div class="about-grid">
+                <div class="about-copy reveal" data-delay="2">
+                    <p>Soy un informático freelance especializado en ciberseguridad.</p>
+                    <p>Mi experiencia incluye una amplia gama de habilidades y conocimientos en la informática.</p>
+                    <p>No dudes en <a href="https://wa.me/+18295221765" target="_blank" style="font-weight: bold; color: white; text-decoration: none;">contactar</a>.</p>
+                    <div class="about-actions">
+                        <a href="https://www.linkedin.com/in/jeremy-josé-de-la-cruz-pérez-0a49b9237/" class="cta-button btn-primary" target="_blank" data-magnetic>
+                            <i class="bi bi-linkedin"></i> Conóceme
+                        </a>
+                        <a href="https://drive.google.com/file/d/1KXLGLcYbH3rQi8wAJnVISu22ofjVN06L/view?usp=sharing" class="cta-button btn-outline" target="_blank" data-magnetic>
+                            <i class="bi bi-file-earmark-person-fill"></i> Puedes Revisar mi CV
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
 
 
     <section id="skills">
-        <h2>Habilidades</h2>
-        <div class="skills-grid">
-            <div class="skill-item" data-skill="Programación y Desarrollo">
-                <h3>Programación y Desarrollo</h3>
-                <p>Desarrollo en C, C#, HTML5, CSS, Godot Engine y Ren'Py.</p>
-                <a href="#" class="cta-button">Más información</a>
-            </div>
-            <div class="skill-item" data-skill="Diseño y Software">
-                <h3>Diseño y Software</h3>
-                <p>Dominio de Adobe Photoshop, Blender, Bootstrap y Microsoft Office.</p>
-                <a href="#" class="cta-button">Más información</a>
-            </div>
-            <div class="skill-item" data-skill="Redes y Servicio Técnico">
-                <h3>Redes y Servicio Técnico</h3>
-                <p>Configuración de redes y armado de cables UTP (categorías 4, 5, 6).</p>
-                <a href="#" class="cta-button">Más información</a>
+        <div class="section-wrap container-x">
+            <span class="section-label reveal">~/SKILLS</span>
+            <h2 class="section-title reveal" data-delay="1">Habilidades</h2>
+            <div class="skills-grid">
+                <div class="skill-item reveal" data-skill="Programación y Desarrollo" data-delay="2">
+                    <span class="card-index mono">// 01</span>
+                    <h3>Programación y Desarrollo</h3>
+                    <p>Desarrollo en C, C#, HTML5, CSS, Godot Engine y Ren'Py.</p>
+                    <a href="#" class="cta-button card-cta">Más información <span aria-hidden="true">&rarr;</span></a>
+                </div>
+                <div class="skill-item reveal" data-skill="Diseño y Software" data-delay="3">
+                    <span class="card-index mono">// 02</span>
+                    <h3>Diseño y Software</h3>
+                    <p>Dominio de Adobe Photoshop, Blender, Bootstrap y Microsoft Office.</p>
+                    <a href="#" class="cta-button card-cta">Más información <span aria-hidden="true">&rarr;</span></a>
+                </div>
+                <div class="skill-item reveal" data-skill="Redes y Servicio Técnico" data-delay="4">
+                    <span class="card-index mono">// 03</span>
+                    <h3>Redes y Servicio Técnico</h3>
+                    <p>Configuración de redes y armado de cables UTP (categorías 4, 5, 6).</p>
+                    <a href="#" class="cta-button card-cta">Más información <span aria-hidden="true">&rarr;</span></a>
+                </div>
             </div>
         </div>
     </section>
@@ -77,29 +175,36 @@
     </div>
     
     <section id="servicios">
-        <h2>Mis Servicios</h2>
-        <div class="services-list">
-            
-            <div class="service-item" data-delay="0.2s">
-                <h3>Desarrollo de Videojuegos</h3>
-                <p>Creación de videojuegos en Godot Engine y Ren'Py, enfocados en calidad y eficiencia.</p>
-            </div>
-            <div class="service-item" data-delay="0.4s">
-                <h3>Soporte Técnico</h3>
-                <p>Reparación básica de teléfonos y computadoras, además de configuración de equipos TI.</p>
-            </div>
-            <div class="service-item" data-delay="0.6s">
-                <h3>Linux y Sistemas Operativos</h3>
-                <p>Administración, instalación y optimización de sistemas Linux.</p>
-            </div>
-            <div class="service-item" data-delay="0.8s">
-                <h3>Asesoría en Informática General</h3>
-                <p>Soporte y soluciones tecnológicas personalizadas para individuos y empresas.</p>
+        <div class="section-wrap container-x">
+            <span class="section-label reveal">~/SERVICIOS</span>
+            <h2 class="section-title reveal" data-delay="1">Mis Servicios</h2>
+            <div class="services-list">
+                <div class="service-item reveal" data-delay="0.2s">
+                    <span class="card-index mono">// 01</span>
+                    <h3>Desarrollo de Videojuegos</h3>
+                    <p>Creación de videojuegos en Godot Engine y Ren'Py, enfocados en calidad y eficiencia.</p>
+                </div>
+                <div class="service-item reveal" data-delay="0.4s">
+                    <span class="card-index mono">// 02</span>
+                    <h3>Soporte Técnico</h3>
+                    <p>Reparación básica de teléfonos y computadoras, además de configuración de equipos TI.</p>
+                </div>
+                <div class="service-item reveal" data-delay="0.6s">
+                    <span class="card-index mono">// 03</span>
+                    <h3>Linux y Sistemas Operativos</h3>
+                    <p>Administración, instalación y optimización de sistemas Linux.</p>
+                </div>
+                <div class="service-item reveal" data-delay="0.8s">
+                    <span class="card-index mono">// 04</span>
+                    <h3>Asesoría en Informática General</h3>
+                    <p>Soporte y soluciones tecnológicas personalizadas para individuos y empresas.</p>
+                </div>
             </div>
         </div>
     </section>
 
     <section id="seccion-galeria">
+        <div class="gallery-fade-mask"></div>
         <div class="image-gallery">
             <!-- Lista completa de íconos - Primera repetición -->
             <a href="https://github.com/je7remy/Sistema-de-agenda" target="_blank">
@@ -315,33 +420,175 @@
 
     <!-- Seccion #projects -->
 <section id="projects">
-    <h2>Mis Proyectos</h2>
-    <div class="projects-grid">
-        <!-- Proyecto del libro -->
-        <div class="project-item">
-            <h3>Libro: Glosario de Ciberseguridad - Tomo 1</h3>
-            <p>Primer tomo de una serie de 4 libros que explican conceptos clave en ciberseguridad con un enfoque claro y educativo. Ideal para estudiantes, técnicos y entusiastas del área.</p>
-            <a href="https://www.amazon.com/dp/B0FHJ25F3T" target="_blank">
-                <img src="images/libro1.png" alt="Libro Glosario de Ciberseguridad" class="project-img">
-            </a>
-        </div>
+    <div class="section-wrap container-x">
+        <span class="section-label reveal">~/PROYECTOS</span>
+        <h2 class="section-title reveal" data-delay="1">Mis Proyectos</h2>
+        <div class="projects-grid">
+            <!-- ===== PROYECTO DESTACADO: SGCM ===== -->
+            <article class="project-item project-item--featured reveal" data-delay="2">
+                <div class="project-featured-badge mono" aria-label="Proyecto destacado">
+                    <span class="project-featured-badge__dot" aria-hidden="true"></span>
+                    FEATURED
+                </div>
 
-        <!-- Proyecto del repositorio Linux & Cybersecurity -->
-        <div class="project-item">
-            <h3>Linux & Cybersecurity Knowledge Hub</h3>
-            <p>Repositorio educativo donde documento mi aprendizaje en administración de sistemas Linux, scripting en Bash, ciberseguridad ofensiva y defensiva, y laboratorios prácticos.</p>
-            <a href="https://github.com/je7remy/linuxknowledge" target="_blank">
-                <img src="images/linuxknowledge.png" alt="Linux Knowledge Hub" class="project-img">
-            </a>
-        </div>
+                <a href="https://github.com/je7remy/HTQ_Citas" target="_blank" rel="noopener noreferrer" class="project-img-wrap project-img-wrap--featured" aria-label="SGCM — Sistema de Gestion de Citas Medicas">
+                    <!-- TODO: reemplazar placeholder SVG con screenshot real del SGCM (guardar en /images) -->
+                    <svg class="project-img project-img--placeholder" viewBox="0 0 800 500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder SGCM">
+                        <defs>
+                            <pattern id="sgcm-grid" width="40" height="40" patternUnits="userSpaceOnUse">
+                                <path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(0,255,106,0.10)" stroke-width="1"/>
+                            </pattern>
+                            <radialGradient id="sgcm-glow" cx="50%" cy="50%" r="50%">
+                                <stop offset="0%"  stop-color="rgba(0,255,106,0.35)"/>
+                                <stop offset="55%" stop-color="rgba(0,255,106,0.06)"/>
+                                <stop offset="100%" stop-color="rgba(0,255,106,0)"/>
+                            </radialGradient>
+                            <filter id="sgcm-blur"><feGaussianBlur stdDeviation="2"/></filter>
+                        </defs>
+                        <rect width="800" height="500" fill="#08090A"/>
+                        <rect width="800" height="500" fill="url(#sgcm-grid)"/>
+                        <circle cx="400" cy="250" r="220" fill="url(#sgcm-glow)"/>
 
-        <!-- Proyecto videojuego ya existente -->
-        <div class="project-item">
-            <h3>Video Juego Multiplataforma 2D</h3>
-            <p>Desarrollado en Godot Engine usando GDScript. Este proyecto fortaleció mis habilidades en programación, diseño gráfico y despertó mi interés en la ciberseguridad aplicada.</p>
-            <a href="https://github.com/je7remy/videoJuegoMultiplataforma2d" target="_blank">
-                <img src="images/juego.jpg" alt="Videojuego 2D" class="project-img">
-            </a>
+                        <!-- Cruz medica -->
+                        <g transform="translate(400 250)">
+                            <rect x="-90" y="-30" width="180" height="60" rx="6" fill="none" stroke="#00FF6A" stroke-width="3" filter="url(#sgcm-blur)" opacity="0.6"/>
+                            <rect x="-30" y="-90" width="60" height="180" rx="6" fill="none" stroke="#00FF6A" stroke-width="3" filter="url(#sgcm-blur)" opacity="0.6"/>
+                            <rect x="-90" y="-30" width="180" height="60" rx="6" fill="none" stroke="#00FF6A" stroke-width="2.5"/>
+                            <rect x="-30" y="-90" width="60" height="180" rx="6" fill="none" stroke="#00FF6A" stroke-width="2.5"/>
+                            <!-- Pulso ECG -->
+                            <path d="M -150 0 L -90 0 L -75 -25 L -55 35 L -35 -45 L -15 25 L 0 0 L 150 0"
+                                  fill="none" stroke="#22FF88" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" opacity="0.85"/>
+                        </g>
+
+                        <!-- HUD esquinas -->
+                        <path d="M 24 24 L 24 56 M 24 24 L 56 24" stroke="#00FF6A" stroke-width="1.5" opacity="0.7"/>
+                        <path d="M 776 24 L 776 56 M 776 24 L 744 24" stroke="#00FF6A" stroke-width="1.5" opacity="0.7"/>
+                        <path d="M 24 476 L 24 444 M 24 476 L 56 476" stroke="#00FF6A" stroke-width="1.5" opacity="0.7"/>
+                        <path d="M 776 476 L 776 444 M 776 476 L 744 476" stroke="#00FF6A" stroke-width="1.5" opacity="0.7"/>
+
+                        <text x="40" y="44" font-family="JetBrains Mono, monospace" font-size="11" fill="#00FF6A" opacity="0.7" letter-spacing="2">SGCM // HTQPJB</text>
+                        <text x="760" y="488" font-family="JetBrains Mono, monospace" font-size="11" fill="#00FF6A" opacity="0.7" letter-spacing="2" text-anchor="end">[ DEPLOYED ]</text>
+                    </svg>
+                    <span class="project-img-overlay"></span>
+                </a>
+
+                <div class="project-body project-body--featured">
+                    <div class="project-status mono">
+                        <span class="project-status__dot" aria-hidden="true"></span>
+                        EN PRODUCCION
+                        <span class="project-status__sep">·</span>
+                        TESIS
+                    </div>
+
+                    <span class="card-index mono">// PROJECT_00 &middot; FEATURED</span>
+                    <h3>SGCM — Sistema de Gestión de Citas Médicas</h3>
+                    <p class="project-tagline">Plataforma web hospitalaria para automatizar la gestión de citas</p>
+
+                    <div class="project-context mono">
+                        Hospital Regional Traumatológico y Quirúrgico Prof. Juan Bosch (HTQPJB) &middot; La Vega, República Dominicana
+                    </div>
+
+                    <p>
+                        Plataforma web hospitalaria desarrollada para automatizar la gestión de citas del Hospital Regional Traumatológico y Quirúrgico Prof. Juan Bosch en La Vega, RD. Construida con FastAPI y PostgreSQL sobre Docker, con autenticación JWT, control de acceso basado en roles en dos capas, auditoría inmutable, generación de reportes PDF con trazabilidad por usuario, y respaldos con verificación SHA-256.
+                    </p>
+
+                    <ul class="project-stats" aria-label="Metricas del proyecto">
+                        <li class="project-stats__item">
+                            <span class="project-stats__num">17</span>
+                            <span class="project-stats__label mono">casos de uso</span>
+                        </li>
+                        <li class="project-stats__item">
+                            <span class="project-stats__num">3</span>
+                            <span class="project-stats__label mono">roles RBAC</span>
+                        </li>
+                        <li class="project-stats__item">
+                            <span class="project-stats__num">197</span>
+                            <span class="project-stats__label mono">tests Pytest</span>
+                        </li>
+                    </ul>
+
+                    <div class="project-features">
+                        <span class="project-features__title mono">// FEATURES</span>
+                        <ul class="project-features__list">
+                            <li>RBAC en dos capas &middot; JWT con bcrypt</li>
+                            <li>Índice único parcial &middot; Auditoría inmutable</li>
+                            <li>CU-16 Respaldos local/externo &middot; SHA-256</li>
+                            <li>CU-17 Especialidades &middot; catálogo administrable</li>
+                            <li>Agenda extendida &middot; PDF + Excel + trazabilidad usuario</li>
+                            <li>197 tests Pytest &middot; 18 archivos &middot; CI/CD activo</li>
+                            <li>Docker + Nginx &middot; WeasyPrint PDFs</li>
+                        </ul>
+                    </div>
+
+                    <div class="project-meta">
+                        <span class="pill mono">FastAPI</span>
+                        <span class="pill mono">PostgreSQL</span>
+                        <span class="pill mono">SQLModel</span>
+                        <span class="pill mono">Docker</span>
+                        <span class="pill mono">Nginx</span>
+                        <span class="pill mono">Tailwind CSS</span>
+                        <span class="pill mono">Pytest</span>
+                        <span class="pill mono">GitHub Actions</span>
+                        <span class="pill mono">WeasyPrint</span>
+                        <a href="https://github.com/je7remy/HTQ_Citas" target="_blank" rel="noopener noreferrer" class="project-link">Ver repo <span aria-hidden="true">&rarr;</span></a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Proyecto del libro -->
+            <div class="project-item reveal" data-delay="2">
+                <a href="https://www.amazon.com/dp/B0FHJ25F3T" target="_blank" class="project-img-wrap" aria-label="Libro Glosario de Ciberseguridad">
+                    <img src="images/libro1.png" alt="Libro Glosario de Ciberseguridad" class="project-img">
+                    <span class="project-img-overlay"></span>
+                </a>
+                <div class="project-body">
+                    <span class="card-index mono">// PROJECT_01</span>
+                    <h3>Libro: Glosario de Ciberseguridad - Tomo 1</h3>
+                    <p>Primer tomo de una serie de 4 libros que explican conceptos clave en ciberseguridad con un enfoque claro y educativo. Ideal para estudiantes, técnicos y entusiastas del área.</p>
+                    <div class="project-meta">
+                        <span class="pill mono">CYBERSEC</span>
+                        <span class="pill mono">EDU</span>
+                        <a href="https://www.amazon.com/dp/B0FHJ25F3T" target="_blank" class="project-link">Ver en Amazon <span aria-hidden="true">&rarr;</span></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Proyecto del repositorio Linux & Cybersecurity -->
+            <div class="project-item reveal" data-delay="3">
+                <a href="https://github.com/je7remy/linuxknowledge" target="_blank" class="project-img-wrap" aria-label="Linux Knowledge Hub">
+                    <img src="images/linuxknowledge.png" alt="Linux Knowledge Hub" class="project-img">
+                    <span class="project-img-overlay"></span>
+                </a>
+                <div class="project-body">
+                    <span class="card-index mono">// PROJECT_02</span>
+                    <h3>Linux & Cybersecurity Knowledge Hub</h3>
+                    <p>Repositorio educativo donde documento mi aprendizaje en administración de sistemas Linux, scripting en Bash, ciberseguridad ofensiva y defensiva, y laboratorios prácticos.</p>
+                    <div class="project-meta">
+                        <span class="pill mono">LINUX</span>
+                        <span class="pill mono">BASH</span>
+                        <span class="pill mono">OFFSEC</span>
+                        <a href="https://github.com/je7remy/linuxknowledge" target="_blank" class="project-link">Ver repo <span aria-hidden="true">&rarr;</span></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Proyecto videojuego ya existente -->
+            <div class="project-item reveal" data-delay="4">
+                <a href="https://github.com/je7remy/videoJuegoMultiplataforma2d" target="_blank" class="project-img-wrap" aria-label="Videojuego 2D">
+                    <img src="images/juego.jpg" alt="Videojuego 2D" class="project-img">
+                    <span class="project-img-overlay"></span>
+                </a>
+                <div class="project-body">
+                    <span class="card-index mono">// PROJECT_03</span>
+                    <h3>Video Juego Multiplataforma 2D</h3>
+                    <p>Desarrollado en Godot Engine usando GDScript. Este proyecto fortaleció mis habilidades en programación, diseño gráfico y despertó mi interés en la ciberseguridad aplicada.</p>
+                    <div class="project-meta">
+                        <span class="pill mono">GODOT</span>
+                        <span class="pill mono">GDSCRIPT</span>
+                        <a href="https://github.com/je7remy/videoJuegoMultiplataforma2d" target="_blank" class="project-link">Ver repo <span aria-hidden="true">&rarr;</span></a>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </section>
@@ -349,7 +596,9 @@
 
    
     <section id="referencias-alumnos">
-        <h2>Referencias de la Comunidad - En fase beta 😉</h2>
+        <div class="section-wrap container-x">
+        <span class="section-label reveal">~/REFERENCIAS</span>
+        <h2 class="section-title reveal" data-delay="1">Referencias de la Comunidad - En fase beta 😉</h2>
         <div class="opiniones-container">
             <a href="https://github.com/DiegoRG01" target="_blank" class="opinión">
                 <img src="images/diego.jpg" alt="Foto de Alumno 1" class="foto-alumno">
@@ -401,24 +650,26 @@
             
         </div>
         <button id="ver-mas" style="display: none;">Ver más</button>
-        <button id="ver-menos" style="display: none;">Ver menos</button>        
+        <button id="ver-menos" style="display: none;">Ver menos</button>
+        </div>
     </section>
     
 
     <section id="social-media">
-        <h3>Sígueme en mis redes sociales</h3>
-        <div class="social-icons">
-            <a href="https://github.com/je7remy" target="_blank" class="social-icon">
-                <i class="bi bi-github"></i>
-            </a>
-            <a href="https://www.linkedin.com/in/jeremy-josé-de-la-cruz-pérez-0a49b9237/" target="_blank" class="social-icon">
-                <i class="bi bi-linkedin"></i>
-            </a>
-            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=je7remy@gmail.com" class="social-icon" target="_blank">
-                <i class="">je7remy@gmail.com</i>
-            </a>
-            
-            
+        <div class="section-wrap container-x">
+            <span class="section-label reveal">~/CONTACTO</span>
+            <h3 class="section-title reveal" data-delay="1">Sígueme en mis redes sociales</h3>
+            <div class="social-icons reveal" data-delay="2">
+                <a href="https://github.com/je7remy" target="_blank" class="social-icon" aria-label="GitHub">
+                    <i class="bi bi-github"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/jeremy-josé-de-la-cruz-pérez-0a49b9237/" target="_blank" class="social-icon" aria-label="LinkedIn">
+                    <i class="bi bi-linkedin"></i>
+                </a>
+                <a href="https://mail.google.com/mail/?view=cm&fs=1&to=je7remy@gmail.com" class="social-icon social-icon--email" target="_blank" aria-label="Enviar correo">
+                    <i class="">je7remy@gmail.com</i>
+                </a>
+            </div>
         </div>
     </section>
     
@@ -449,6 +700,10 @@
     <script src="scripts/script.js"></script>
     <script src="scripts/popup.js"></script>
     <script src="scripts/ver-mas.js"></script>
+
+    <!-- Rediseno: nav + effects -->
+    <script src="scripts/nav.js" defer></script>
+    <script src="scripts/effects.js" defer></script>
 
 </body>
 </html>
