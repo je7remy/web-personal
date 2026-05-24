@@ -180,9 +180,23 @@
     }
 
     /* ----------------------------------------------------------
+       5) Stagger automatico para .skill-icon (50ms entre cada uno)
+       ---------------------------------------------------------- */
+    function initSkillStagger() {
+        const grids = document.querySelectorAll('#skills .skills-grid');
+        grids.forEach(function (grid) {
+            const icons = grid.querySelectorAll('.skill-icon');
+            icons.forEach(function (icon, i) {
+                icon.style.setProperty('--reveal-delay', (i * 50) + 'ms');
+            });
+        });
+    }
+
+    /* ----------------------------------------------------------
        Init
        ---------------------------------------------------------- */
     function init() {
+        initSkillStagger();
         initReveal();
         initMagnetic();
         initHeroParallax();

@@ -186,71 +186,168 @@
     gap: var(--sp-3);
 }
 
-/* ----------------------------------------------------------
-   Override sobre legacy:
-   styles.css define #sobre-mi .cta-button con bg amarillo
-   (specificity 1,1,1). Igualamos con #sobre-mi .cta-button.X
-   (specificity 1,2,1) para ganarle sin !important.
-   ---------------------------------------------------------- */
-#sobre-mi .cta-button.btn-primary,
-#sobre-mi a.cta-button.btn-primary {
-    background: var(--green-1);
-    color: var(--bg-0);
-    border: 1px solid var(--green-1);
-    padding: 14px 22px;
-    font-family: var(--font-mono);
-    font-size: var(--fs-sm);
-    text-transform: uppercase;
-    letter-spacing: var(--tr-mono);
+/* Bloque key:value tipo terminal (sin tabla) */
+.about-meta {
+    margin: var(--sp-2) 0 var(--sp-6);
+    padding: var(--sp-5);
+    background: rgba(15, 20, 17, 0.4);
+    border: 1px solid var(--border-1);
+    border-left: 2px solid var(--green-1);
     border-radius: var(--radius-sm);
-    box-shadow: 0 8px 24px rgba(0, 255, 106, 0.18);
-    transition:
-        transform 250ms var(--ease-out),
-        background 250ms var(--ease-out),
-        box-shadow 250ms var(--ease-out),
-        color 250ms var(--ease-out);
+    font-family: var(--font-mono);
+    font-size: 13px;
+    line-height: 1.65;
+    color: var(--text-2);
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
 }
-#sobre-mi .cta-button.btn-primary:hover,
-#sobre-mi a.cta-button.btn-primary:hover {
-    background: var(--green-3);
-    color: var(--bg-0);
-    transform: translateY(-2px) scale(1);
-    box-shadow:
-        0 0 28px rgba(0, 255, 106, 0.55),
-        0 16px 34px rgba(0, 255, 106, 0.28);
+.about-meta__row {
+    display: grid;
+    grid-template-columns: 110px 1fr;
+    gap: var(--sp-3);
+    align-items: baseline;
 }
-#sobre-mi .cta-button.btn-primary i,
-#sobre-mi .cta-button.btn-outline i {
-    margin-right: 6px;
-    font-size: 1.1em;
-    color: inherit;
+.about-meta dt {
+    color: var(--green-1);
+    text-transform: lowercase;
+    letter-spacing: var(--tr-mono);
+    opacity: 0.85;
+}
+.about-meta dt::after {
+    content: ' :';
+    color: var(--text-3);
+    opacity: 0.6;
+    margin-left: 4px;
+}
+.about-meta dd {
+    margin: 0;
+    color: var(--text-1);
 }
 
-#sobre-mi .cta-button.btn-outline,
-#sobre-mi a.cta-button.btn-outline {
-    background: transparent;
-    color: var(--text-1);
-    border: 1px solid var(--border-3);
-    padding: 14px 22px;
-    font-family: var(--font-mono);
-    font-size: var(--fs-sm);
-    text-transform: uppercase;
-    letter-spacing: var(--tr-mono);
-    border-radius: var(--radius-sm);
-    transition:
-        transform 250ms var(--ease-out),
-        background 250ms var(--ease-out),
-        border-color 250ms var(--ease-out),
-        color 250ms var(--ease-out),
-        box-shadow 250ms var(--ease-out);
+@media (max-width: 480px) {
+    .about-meta { font-size: 12px; padding: var(--sp-4); }
+    .about-meta__row { grid-template-columns: 90px 1fr; gap: var(--sp-2); }
 }
-#sobre-mi .cta-button.btn-outline:hover,
-#sobre-mi a.cta-button.btn-outline:hover {
-    background: rgba(0, 255, 106, 0.08);
-    color: var(--green-1);
-    border-color: var(--green-1);
-    transform: translateY(-2px) scale(1);
-    box-shadow: var(--glow-sm);
+
+/* ----------------------------------------------------------
+   Botones Sobre-mi — estetica Linear/Vercel
+   - Primario: blanco sobre negro (sin acento, sin glow)
+   - Secundario: outline blanco a 14% opacidad
+   - Override del legacy #sobre-mi .cta-button (specificity
+     1,1,1) usando #sobre-mi .btn-* + .cta-button para subir a
+     (1,2,1) sin !important.
+   ---------------------------------------------------------- */
+#sobre-mi .cta-button.btn-primary,
+#sobre-mi a.cta-button.btn-primary,
+#sobre-mi .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 18px;
+    font-family: var(--font-body);
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: -0.01em;
+    line-height: 1;
+    color: #0A0A0A;
+    background: #FFFFFF;
+    border: 1px solid #FFFFFF;
+    border-radius: 8px;
+    text-decoration: none;
+    text-transform: none;
+    cursor: pointer;
+    box-shadow: none;
+    text-shadow: none;
+    transition:
+        background 180ms var(--ease-out),
+        border-color 180ms var(--ease-out),
+        transform 180ms var(--ease-out);
+}
+#sobre-mi .cta-button.btn-primary:hover,
+#sobre-mi a.cta-button.btn-primary:hover,
+#sobre-mi .btn-primary:hover {
+    background: #E8E8E8;
+    border-color: #E8E8E8;
+    color: #0A0A0A;
+    transform: translateY(-1px);
+    box-shadow: none;
+}
+#sobre-mi .cta-button.btn-primary:active,
+#sobre-mi .btn-primary:active {
+    transform: translateY(0);
+}
+#sobre-mi .cta-button.btn-primary:focus-visible,
+#sobre-mi .btn-primary:focus-visible {
+    outline: 2px solid rgba(255, 255, 255, 0.5);
+    outline-offset: 2px;
+    box-shadow: none;
+}
+
+#sobre-mi .cta-button.btn-secondary,
+#sobre-mi a.cta-button.btn-secondary,
+#sobre-mi .btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 18px;
+    font-family: var(--font-body);
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: -0.01em;
+    line-height: 1;
+    color: rgba(255, 255, 255, 0.92);
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    border-radius: 8px;
+    text-decoration: none;
+    text-transform: none;
+    cursor: pointer;
+    box-shadow: none;
+    text-shadow: none;
+    transition:
+        background 180ms var(--ease-out),
+        border-color 180ms var(--ease-out),
+        color 180ms var(--ease-out),
+        transform 180ms var(--ease-out);
+}
+#sobre-mi .cta-button.btn-secondary:hover,
+#sobre-mi a.cta-button.btn-secondary:hover,
+#sobre-mi .btn-secondary:hover {
+    background: rgba(255, 255, 255, 0.04);
+    border-color: rgba(255, 255, 255, 0.24);
+    color: #FFFFFF;
+    transform: translateY(-1px);
+    box-shadow: none;
+}
+#sobre-mi .cta-button.btn-secondary:focus-visible,
+#sobre-mi .btn-secondary:focus-visible {
+    outline: 2px solid rgba(255, 255, 255, 0.5);
+    outline-offset: 2px;
+    box-shadow: none;
+}
+
+/* Icono Bootstrap dentro del boton */
+#sobre-mi .btn-primary i,
+#sobre-mi .btn-secondary i {
+    font-size: 1.05em;
+    color: inherit;
+    line-height: 1;
+}
+
+/* Flecha animada (si la card-cta o link la incluye)
+   Aplicar a hermano span con clase utilitaria. Por compat,
+   tambien afectamos <i> de Bootstrap-icons con clase right-arrow. */
+#sobre-mi .btn-primary .arrow,
+#sobre-mi .btn-secondary .arrow {
+    display: inline-block;
+    transition: transform 180ms var(--ease-out);
+}
+#sobre-mi .btn-primary:hover .arrow,
+#sobre-mi .btn-secondary:hover .arrow {
+    transform: translateX(2px);
 }
 
 /* ============================================================
@@ -263,106 +360,76 @@
 }
 #skills h2 {
     color: var(--text-1);
+    margin-bottom: var(--sp-2);
 }
-.skills-grid {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: var(--sp-5);
-    margin-top: var(--sp-5);
-}
-.skill-item {
-    position: relative;
-    background: var(--glass-bg);
-    border: 1px solid var(--border-1);
-    border-radius: var(--radius-md);
-    padding: var(--sp-6);
-    color: var(--text-1);
-    text-align: left;
-    width: auto;
-    margin: 0;
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    cursor: pointer;
-    overflow: hidden;
-    transition:
-        transform var(--dur) var(--ease-out),
-        border-color var(--dur) var(--ease-out),
-        background var(--dur) var(--ease-out),
-        box-shadow var(--dur) var(--ease-out);
-}
-.skill-item::before {
-    content: '';
-    position: absolute;
-    top: 0; left: 0;
-    width: 100%; height: 1px;
-    background: linear-gradient(90deg, transparent, var(--green-1), transparent);
-    opacity: 0;
-    transition: opacity var(--dur) var(--ease-out);
-}
-.skill-item:hover {
-    transform: translateY(-6px);
-    border-color: var(--border-3);
-    background: rgba(0, 255, 106, 0.03);
-    box-shadow:
-        0 16px 40px rgba(0, 0, 0, 0.55),
-        0 0 30px rgba(0, 255, 106, 0.12);
-}
-.skill-item:hover::before { opacity: 1; }
-.skill-item h3 {
-    font-size: var(--fs-lg);
-    font-weight: 600;
-    margin-bottom: var(--sp-3);
-    color: var(--text-1);
-}
-.skill-item p {
+
+/* Subtitulo opcional debajo del h2 (Stack tecnico) */
+.section-subtitle {
+    display: block;
+    color: var(--text-3);
     font-size: var(--fs-sm);
-    color: var(--text-2);
-    line-height: var(--lh-normal);
-    margin-bottom: var(--sp-5);
-}
-.skill-item .cta-button,
-.card-cta {
-    display: inline-flex;
-    align-items: center;
-    gap: var(--sp-2);
-    padding: 0;
-    background: transparent;
-    color: var(--green-1);
-    border: none;
-    border-radius: 0;
-    font-family: var(--font-mono);
-    font-size: var(--fs-xs);
     letter-spacing: var(--tr-mono);
     text-transform: uppercase;
-    text-decoration: none;
-    transition: color var(--dur-fast) var(--ease-out),
-                transform var(--dur-fast) var(--ease-out);
-    margin: 0;
-    position: relative;
+    margin-bottom: var(--sp-7);
 }
-.skill-item .cta-button::after,
-.card-cta::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    bottom: -4px;
-    width: 100%;
-    height: 1px;
-    background: var(--green-1);
-    transform: scaleX(0);
-    transform-origin: left;
-    transition: transform var(--dur) var(--ease-out);
+
+/* Grupo de iconos: label mono + grid libre */
+.skills-group {
+    margin-top: var(--sp-7);
 }
-.skill-item .cta-button:hover,
-.card-cta:hover {
+.skills-group:first-of-type { margin-top: var(--sp-5); }
+
+.skills-group__label {
+    display: block;
+    color: var(--green-1);
+    font-size: 0.7rem;
+    letter-spacing: var(--tr-mono);
+    text-transform: uppercase;
+    margin-bottom: var(--sp-4);
+    opacity: 0.9;
+}
+
+/* Grid de iconos libre, sin capsulas */
+#skills .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(72px, 1fr));
+    gap: 32px 24px;
+    align-items: center;
+    justify-items: center;
+    padding: 8px 0;
+    max-width: 100%;
+}
+
+/* Icono individual */
+.skill-icon {
+    width: 56px;
+    height: 56px;
+    object-fit: contain;
+    opacity: 0.92;
+    filter: drop-shadow(0 0 0 transparent);
+    transition:
+        transform 250ms var(--ease-out),
+        opacity 250ms var(--ease-out),
+        filter 250ms var(--ease-out);
+    /* Stagger: --reveal-delay lo asigna effects.js */
+    transition-delay: var(--reveal-delay, 0ms);
+    /* Anular cualquier herencia legacy */
     background: transparent;
-    color: var(--green-3);
-    transform: translateY(0);
+    border: none;
+    padding: 0;
+    box-shadow: none;
+    border-radius: 0;
 }
-.skill-item .cta-button:hover::after,
-.card-cta:hover::after {
-    transform: scaleX(1);
+.skill-icon:hover {
+    transform: translateY(-4px) scale(1.08);
+    opacity: 1;
+    filter: drop-shadow(0 0 12px rgba(0, 255, 106, 0.45));
+    transition-delay: 0ms;
 }
+
+/* Compat: por si quedan referencias al sistema viejo de cards.
+   El popup.js usa .skill-item[data-skill]. Si no hay matches, no pasa nada. */
+.skill-item { display: none; }
 
 /* ============================================================
    SERVICIOS
@@ -383,12 +450,13 @@
     position: relative;
     z-index: var(--z-content);
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-    gap: var(--sp-5);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
     padding: 0;
     margin-top: var(--sp-5);
 }
 #servicios .service-item {
+    position: relative;
     background: var(--glass-bg);
     border: 1px solid var(--border-1);
     border-radius: var(--radius-md);
@@ -400,94 +468,60 @@
     width: auto;
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
-    transition:
-        transform var(--dur) var(--ease-out),
-        border-color var(--dur) var(--ease-out),
-        background var(--dur) var(--ease-out),
-        box-shadow var(--dur) var(--ease-out);
+    /* opacity:0/translateY del legacy se mantiene como estado
+       inicial; .visible / .reveal.is-visible activan la entrada */
     opacity: 0;
     transform: translateY(20px);
     filter: none;
+    transition:
+        opacity 700ms var(--ease-out),
+        transform 700ms var(--ease-out),
+        border-color 250ms var(--ease-out),
+        background 250ms var(--ease-out);
 }
-#servicios .service-item.visible {
-    opacity: 1;
-    transform: translateY(0);
-}
-#servicios .service-item.is-visible {
+#servicios .service-item.visible,
+#servicios .service-item.reveal.is-visible {
     opacity: 1;
     transform: translateY(0);
 }
 #servicios .service-item:hover {
-    transform: translateY(-6px) scale(1);
-    border-color: var(--border-3);
-    background: rgba(0, 255, 106, 0.03);
-    box-shadow:
-        0 16px 40px rgba(0, 0, 0, 0.55),
-        0 0 30px rgba(0, 255, 106, 0.12);
+    transform: translateY(-2px);
+    border-color: rgba(0, 255, 106, 0.32);
+    background: rgba(0, 255, 106, 0.02);
+    box-shadow: none;
     filter: none;
 }
+.service-glyph {
+    display: block;
+    color: var(--green-1);
+    font-size: 0.85rem;
+    letter-spacing: var(--tr-mono);
+    margin-bottom: var(--sp-3);
+    opacity: 0.85;
+}
 #servicios .service-item h3 {
-    font-size: var(--fs-lg);
+    font-size: 19px;
+    font-weight: 600;
+    letter-spacing: var(--tr-tight);
     color: var(--text-1);
     margin-bottom: var(--sp-3);
     margin-top: 0;
+    line-height: 1.3;
 }
 #servicios .service-item p {
     color: var(--text-2);
-    font-size: var(--fs-sm);
+    font-size: 14.5px;
+    line-height: 1.55;
 }
 
-/* ============================================================
-   GALERIA (carrusel infinito de iconos)
-   ============================================================ */
-#seccion-galeria {
-    background: linear-gradient(180deg, rgba(8,9,10,1), rgba(11,15,12,1), rgba(8,9,10,1));
-    padding: var(--sp-7) 0;
-    position: relative;
-    border-top: 1px solid var(--border-1);
-    border-bottom: 1px solid var(--border-1);
+@media (max-width: 768px) {
+    #servicios .services-list {
+        grid-template-columns: 1fr;
+    }
 }
-#seccion-galeria::before,
-#seccion-galeria::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    width: 140px;
-    z-index: 2;
-    pointer-events: none;
-}
-#seccion-galeria::before {
-    left: 0;
-    background: linear-gradient(90deg, var(--bg-0) 0%, transparent 100%);
-}
-#seccion-galeria::after {
-    right: 0;
-    background: linear-gradient(270deg, var(--bg-0) 0%, transparent 100%);
-}
-.image-gallery img {
-    width: 80px;
-    height: 80px;
-    object-fit: contain;
-    padding: 14px;
-    background: rgba(255, 255, 255, 0.02);
-    border: 1px solid var(--border-1);
-    border-radius: var(--radius-md);
-    filter: grayscale(0.35) brightness(0.95);
-    transition:
-        filter var(--dur) var(--ease-out),
-        border-color var(--dur) var(--ease-out),
-        background var(--dur) var(--ease-out),
-        transform var(--dur) var(--ease-out);
-}
-.image-gallery a:hover img {
-    filter: grayscale(0) brightness(1);
-    transform: scale(1.08);
-    border-color: var(--border-3);
-    background: rgba(0, 255, 106, 0.05);
-    box-shadow: 0 0 18px rgba(0, 255, 106, 0.25);
-}
-.gallery-fade-mask { display: none; }
+
+/* (Removido) #seccion-galeria + .image-gallery: la seccion del carrusel
+   se elimino del HTML; sus iconos viven ahora en #skills como grid libre. */
 
 /* ============================================================
    PROJECTS
@@ -1129,7 +1163,8 @@ footer a:hover {
    RESPONSIVE
    ============================================================ */
 @media (max-width: 1024px) {
-    .skills-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    /* .skills-grid ya tiene su propio responsive abajo basado en
+       minmax(); no forzamos 2 cols aqui. */
 
     .project-img-wrap--featured { aspect-ratio: 16 / 9; }
     .project-features__list { grid-template-columns: 1fr; }
@@ -1138,7 +1173,8 @@ footer a:hover {
 @media (max-width: 768px) {
     section { padding: var(--sp-8) var(--sp-4); }
 
-    .skills-grid,
+    /* No incluimos .skills-grid aqui; el grid de iconos usa minmax()
+       y se adapta solo. Forzar 1 col cortaria el layout libre. */
     .projects-grid,
     .opiniones-container,
     #servicios .services-list {
@@ -1161,36 +1197,45 @@ footer a:hover {
         font-size: var(--fs-md);
     }
     /* Override legacy mobile (#sobre-mi .cta-button con amarillo en
-       styles.css:786-803). Misma specificity (1,1,1) que el legacy,
-       cargado despues -> gana. Especificamos primary/outline para
-       igualar comportamiento desktop. */
+       styles.css:786-803). Estetica Linear/Vercel: blanco sobre
+       negro + outline. Sin glow ni amarillo. */
     #sobre-mi .cta-button {
         background: transparent;
         color: var(--text-1);
+        box-shadow: none;
     }
     #sobre-mi .cta-button.btn-primary,
-    #sobre-mi a.cta-button.btn-primary {
-        background: var(--green-1);
-        color: var(--bg-0);
-        border: 1px solid var(--green-1);
-        box-shadow: 0 8px 24px rgba(0, 255, 106, 0.18);
+    #sobre-mi a.cta-button.btn-primary,
+    #sobre-mi .btn-primary {
+        background: #FFFFFF;
+        color: #0A0A0A;
+        border: 1px solid #FFFFFF;
+        box-shadow: none;
+        padding: 10px 18px;
+        font-size: 14px;
     }
     #sobre-mi .cta-button.btn-primary:hover,
-    #sobre-mi a.cta-button.btn-primary:hover {
-        background: var(--green-3);
-        color: var(--bg-0);
+    #sobre-mi a.cta-button.btn-primary:hover,
+    #sobre-mi .btn-primary:hover {
+        background: #E8E8E8;
+        border-color: #E8E8E8;
+        color: #0A0A0A;
     }
-    #sobre-mi .cta-button.btn-outline,
-    #sobre-mi a.cta-button.btn-outline {
+    #sobre-mi .cta-button.btn-secondary,
+    #sobre-mi a.cta-button.btn-secondary,
+    #sobre-mi .btn-secondary {
         background: transparent;
-        color: var(--text-1);
-        border: 1px solid var(--border-3);
+        color: rgba(255, 255, 255, 0.92);
+        border: 1px solid rgba(255, 255, 255, 0.14);
+        padding: 10px 18px;
+        font-size: 14px;
     }
-    #sobre-mi .cta-button.btn-outline:hover,
-    #sobre-mi a.cta-button.btn-outline:hover {
-        background: rgba(0, 255, 106, 0.08);
-        color: var(--green-1);
-        border-color: var(--green-1);
+    #sobre-mi .cta-button.btn-secondary:hover,
+    #sobre-mi a.cta-button.btn-secondary:hover,
+    #sobre-mi .btn-secondary:hover {
+        background: rgba(255, 255, 255, 0.04);
+        border-color: rgba(255, 255, 255, 0.24);
+        color: #FFFFFF;
     }
 
     /* Servicios: el legacy lo oculta en mobile. Lo reactivamos. */
@@ -1234,11 +1279,20 @@ footer a:hover {
         flex: none;
     }
 
-    .image-gallery img {
-        width: 64px;
-        height: 64px;
-        padding: 10px;
+    /* Skills icons responsive */
+    #skills .skills-grid {
+        grid-template-columns: repeat(auto-fit, minmax(56px, 1fr));
+        gap: 18px;
     }
+    .skill-icon { width: 42px; height: 42px; }
+}
+
+@media (min-width: 769px) and (max-width: 1023px) {
+    #skills .skills-grid {
+        grid-template-columns: repeat(auto-fit, minmax(64px, 1fr));
+        gap: 24px;
+    }
+    .skill-icon { width: 48px; height: 48px; }
 }
 
 @media (max-width: 480px) {
