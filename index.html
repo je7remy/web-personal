@@ -97,11 +97,14 @@
                 <span class="hero-prompt__sep">//</span>
                 <span class="hero-prompt__tag">INIT</span>
             </div>
-            <h1><span class="hero-h1-greet">Hola, soy</span> <span class="hero-h1-name">Jeremy</span></h1>
-            <h2>Técnico e Ingeniero en Informática especializado en Ciberseguridad</h2>
+            <h1><span class="hero-h1-greet">Hola, soy</span> <span class="hero-h1-name">Jeremy de la Cruz</span></h1>
+            <h2>Backend Engineer &middot; Infrastructure &middot; La Vega, RD</h2>
             <div class="hero-typed">
                 <span class="hero-typed__caret mono">&gt;</span>
-                <p id="dynamic-text">Auditorías de ciberseguridad.</p>
+                <!-- id renombrado para neutralizar script.js legacy (typing
+                     viejo). El check 'if (textElement)' del legacy retorna
+                     null y no inicia. La animacion la maneja effects.js. -->
+                <p id="hero-typed-text" data-typing="initial">building systems that explain themselves —</p>
             </div>
             <a href="#skills" class="cta-button hero-cta" data-magnetic>
                 <span class="hero-cta__label">¿Cómo te puedo ayudar?</span>
@@ -152,7 +155,7 @@
                         <a href="https://www.linkedin.com/in/jeremy-josé-de-la-cruz-pérez-0a49b9237/" class="cta-button btn-primary" target="_blank" rel="noopener noreferrer" data-magnetic>
                             <i class="bi bi-linkedin"></i> Conóceme
                         </a>
-                        <a href="https://drive.google.com/file/d/1KXLGLcYbH3rQi8wAJnVISu22ofjVN06L/view?usp=sharing" class="cta-button btn-secondary" target="_blank" rel="noopener noreferrer" data-magnetic>
+                        <a href="https://drive.google.com/file/d/1VC9ijPj8_74VX_FI7_BHBdi-647Dh0Xb/view?usp=sharing" class="cta-button btn-secondary" target="_blank" rel="noopener noreferrer" data-magnetic>
                             <i class="bi bi-file-earmark-person-fill"></i> Revisar mi CV
                         </a>
                     </div>
@@ -300,44 +303,24 @@
                     FEATURED
                 </div>
 
-                <a href="https://github.com/je7remy/HTQ_Citas" target="_blank" rel="noopener noreferrer" class="project-img-wrap project-img-wrap--featured" aria-label="SGCM — Sistema de Gestion de Citas Medicas">
-                    <!-- TODO: reemplazar placeholder SVG con screenshot real del SGCM (guardar en /images) -->
-                    <svg class="project-img project-img--placeholder" viewBox="0 0 800 500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder SGCM">
-                        <defs>
-                            <pattern id="sgcm-grid" width="40" height="40" patternUnits="userSpaceOnUse">
-                                <path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(0,255,106,0.10)" stroke-width="1"/>
-                            </pattern>
-                            <radialGradient id="sgcm-glow" cx="50%" cy="50%" r="50%">
-                                <stop offset="0%"  stop-color="rgba(0,255,106,0.35)"/>
-                                <stop offset="55%" stop-color="rgba(0,255,106,0.06)"/>
-                                <stop offset="100%" stop-color="rgba(0,255,106,0)"/>
-                            </radialGradient>
-                            <filter id="sgcm-blur"><feGaussianBlur stdDeviation="2"/></filter>
-                        </defs>
-                        <rect width="800" height="500" fill="#08090A"/>
-                        <rect width="800" height="500" fill="url(#sgcm-grid)"/>
-                        <circle cx="400" cy="250" r="220" fill="url(#sgcm-glow)"/>
+                <a href="https://github.com/je7remy/HTQ_Citas" target="_blank" rel="noopener noreferrer" class="project-img-wrap project-img-wrap--featured" aria-label="SGCM — Sistema de Gestión de Citas Médicas">
+                    <img
+                        src="https://images.unsplash.com/photo-1586773860418-d37222d8fce3?q=80&w=1600&auto=format&fit=crop"
+                        alt="SGCM — Sistema de Gestión de Citas Médicas para el Hospital Regional Traumatológico y Quirúrgico Prof. Juan Bosch"
+                        loading="lazy"
+                        decoding="async"
+                        class="project-img project-cover"
+                    />
+                    <!-- Imagen externa de Unsplash. Considerar descargar a /images/sgcm-cover.jpg en el futuro para no depender de CDN externo. -->
 
-                        <!-- Cruz medica -->
-                        <g transform="translate(400 250)">
-                            <rect x="-90" y="-30" width="180" height="60" rx="6" fill="none" stroke="#00FF6A" stroke-width="3" filter="url(#sgcm-blur)" opacity="0.6"/>
-                            <rect x="-30" y="-90" width="60" height="180" rx="6" fill="none" stroke="#00FF6A" stroke-width="3" filter="url(#sgcm-blur)" opacity="0.6"/>
-                            <rect x="-90" y="-30" width="180" height="60" rx="6" fill="none" stroke="#00FF6A" stroke-width="2.5"/>
-                            <rect x="-30" y="-90" width="60" height="180" rx="6" fill="none" stroke="#00FF6A" stroke-width="2.5"/>
-                            <!-- Pulso ECG -->
-                            <path d="M -150 0 L -90 0 L -75 -25 L -55 35 L -35 -45 L -15 25 L 0 0 L 150 0"
-                                  fill="none" stroke="#22FF88" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" opacity="0.85"/>
-                        </g>
+                    <!-- HUD recreado como overlay HTML (antes vivia dentro del SVG placeholder) -->
+                    <span class="project-cover-hud project-cover-hud--corner project-cover-hud--tl" aria-hidden="true"></span>
+                    <span class="project-cover-hud project-cover-hud--corner project-cover-hud--tr" aria-hidden="true"></span>
+                    <span class="project-cover-hud project-cover-hud--corner project-cover-hud--bl" aria-hidden="true"></span>
+                    <span class="project-cover-hud project-cover-hud--corner project-cover-hud--br" aria-hidden="true"></span>
+                    <span class="project-cover-hud project-cover-hud--label mono">SGCM // HTQPJB</span>
+                    <span class="project-cover-hud project-cover-hud--deployed mono">[ DEPLOYED ]</span>
 
-                        <!-- HUD esquinas -->
-                        <path d="M 24 24 L 24 56 M 24 24 L 56 24" stroke="#00FF6A" stroke-width="1.5" opacity="0.7"/>
-                        <path d="M 776 24 L 776 56 M 776 24 L 744 24" stroke="#00FF6A" stroke-width="1.5" opacity="0.7"/>
-                        <path d="M 24 476 L 24 444 M 24 476 L 56 476" stroke="#00FF6A" stroke-width="1.5" opacity="0.7"/>
-                        <path d="M 776 476 L 776 444 M 776 476 L 744 476" stroke="#00FF6A" stroke-width="1.5" opacity="0.7"/>
-
-                        <text x="40" y="44" font-family="JetBrains Mono, monospace" font-size="11" fill="#00FF6A" opacity="0.7" letter-spacing="2">SGCM // HTQPJB</text>
-                        <text x="760" y="488" font-family="JetBrains Mono, monospace" font-size="11" fill="#00FF6A" opacity="0.7" letter-spacing="2" text-anchor="end">[ DEPLOYED ]</text>
-                    </svg>
                     <span class="project-img-overlay"></span>
                 </a>
 

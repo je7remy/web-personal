@@ -253,14 +253,17 @@
     font-weight: 700;
     text-shadow: var(--glow-sm);
 }
-.hero-typed #dynamic-text {
+.hero-typed #dynamic-text,
+.hero-typed #hero-typed-text {
     margin: 0;
     color: var(--text-1);
     font-size: var(--fs-base);
     line-height: 1.4;
     min-height: 1.4em;
+    white-space: pre-wrap;
 }
-.hero-typed #dynamic-text::after {
+.hero-typed #dynamic-text::after,
+.hero-typed #hero-typed-text::after {
     content: '_';
     color: var(--green-1);
     margin-left: 4px;

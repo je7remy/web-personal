@@ -180,6 +180,71 @@
     }
 
     /* ----------------------------------------------------------
+       4b) Hero typing — reemplazo del legacy script.js
+       El elemento usa id="hero-typed-text" (renombrado del viejo
+       "dynamic-text") para que el legacy no se active. Aqui
+       implementamos las 4 frases inglesas literales del README.
+       Misma cadencia que el legacy: 50ms char, 2000ms pausa al
+       terminar, 500ms entre frases.
+       ---------------------------------------------------------- */
+    function initHeroTyping() {
+        const el = document.getElementById('hero-typed-text');
+        if (!el) return;
+
+        const phrases = [
+            'building systems that explain themselves —',
+            'FastAPI · PostgreSQL · Docker · Linux · CI/CD',
+            'quality over volume. always.',
+            'currently shipping SGCM for HTQPJB'
+        ];
+
+        /* Si el usuario prefiere reducir movimiento, mostrar la
+           primera frase estatica y no animar. */
+        if (reduced) {
+            el.textContent = phrases[0];
+            return;
+        }
+
+        let phraseIdx = 0;
+        let charIdx = 0;
+        let deleting = false;
+
+        const SPEED_TYPE   = 50;    /* ms por char escribiendo */
+        const SPEED_DELETE = 50;    /* ms por char borrando */
+        const PAUSE_END    = 2000;  /* ms al terminar de escribir */
+        const PAUSE_NEXT   = 500;   /* ms entre frases */
+
+        el.textContent = '';
+
+        function tick() {
+            const current = phrases[phraseIdx];
+
+            if (deleting) {
+                charIdx -= 1;
+                el.textContent = current.substring(0, charIdx);
+                if (charIdx <= 0) {
+                    deleting = false;
+                    phraseIdx = (phraseIdx + 1) % phrases.length;
+                    setTimeout(tick, PAUSE_NEXT);
+                } else {
+                    setTimeout(tick, SPEED_DELETE);
+                }
+            } else {
+                charIdx += 1;
+                el.textContent = current.substring(0, charIdx);
+                if (charIdx >= current.length) {
+                    deleting = true;
+                    setTimeout(tick, PAUSE_END);
+                } else {
+                    setTimeout(tick, SPEED_TYPE);
+                }
+            }
+        }
+
+        tick();
+    }
+
+    /* ----------------------------------------------------------
        5) Stagger automatico para .skill-icon (50ms entre cada uno)
        ---------------------------------------------------------- */
     function initSkillStagger() {
@@ -196,6 +261,7 @@
        Init
        ---------------------------------------------------------- */
     function init() {
+        initHeroTyping();
         initSkillStagger();
         initReveal();
         initMagnetic();

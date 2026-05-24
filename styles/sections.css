@@ -599,6 +599,114 @@
 }
 .project-img-wrap:hover .project-img-overlay { opacity: 1; }
 
+/* ----------------------------------------------------------
+   Cover real (Unsplash) para SGCM featured.
+   Armoniza la foto con la paleta verde sin convertirla en
+   sticker: filtro sutil + overlay gradient + HUD overlay.
+   ---------------------------------------------------------- */
+.project-item--featured .project-cover {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+    border-radius: 0;
+    filter: saturate(0.85) brightness(0.92);
+    transition:
+        transform 700ms var(--ease-out),
+        filter 300ms var(--ease-out);
+}
+.project-item--featured .project-img-wrap:hover .project-cover {
+    transform: scale(1.04);
+    filter: saturate(1) brightness(1);
+}
+
+/* Overlay gradient verde para fundir con paleta.
+   Se aplica por encima de la imagen pero por debajo del HUD/HTML. */
+.project-item--featured .project-img-wrap--featured::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+        linear-gradient(180deg, rgba(8,9,10,0.30) 0%, transparent 30%, transparent 65%, rgba(8,9,10,0.55) 100%),
+        linear-gradient(180deg, transparent 55%, rgba(0,255,106,0.08));
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* HUD overlay sobre la foto (antes vivia dentro del SVG) */
+.project-cover-hud {
+    position: absolute;
+    z-index: 3;
+    pointer-events: none;
+    color: var(--green-1);
+    opacity: 0.85;
+    text-shadow: 0 0 6px rgba(0,0,0,0.85);
+}
+.project-cover-hud--corner {
+    width: 28px;
+    height: 28px;
+    opacity: 0.7;
+}
+.project-cover-hud--tl {
+    top: 14px; left: 14px;
+    border-top: 1px solid var(--green-1);
+    border-left: 1px solid var(--green-1);
+}
+.project-cover-hud--tr {
+    top: 14px; right: 14px;
+    border-top: 1px solid var(--green-1);
+    border-right: 1px solid var(--green-1);
+}
+.project-cover-hud--bl {
+    bottom: 14px; left: 14px;
+    border-bottom: 1px solid var(--green-1);
+    border-left: 1px solid var(--green-1);
+}
+.project-cover-hud--br {
+    bottom: 14px; right: 14px;
+    border-bottom: 1px solid var(--green-1);
+    border-right: 1px solid var(--green-1);
+}
+.project-cover-hud--label {
+    top: 22px;
+    left: 54px;
+    font-size: 0.68rem;
+    letter-spacing: var(--tr-wide);
+    padding: 3px 8px;
+    background: rgba(8, 9, 10, 0.55);
+    border-radius: var(--radius-sm);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    text-shadow: none;
+}
+.project-cover-hud--deployed {
+    bottom: 22px;
+    right: 54px;
+    font-size: 0.68rem;
+    letter-spacing: var(--tr-wide);
+    padding: 3px 8px;
+    background: rgba(8, 9, 10, 0.55);
+    border-radius: var(--radius-sm);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    text-shadow: none;
+}
+
+/* Featured badge (FEATURED) ya existente queda encima de la imagen.
+   Subimos su z-index para asegurarlo. */
+.project-item--featured .project-featured-badge { z-index: 4; }
+
+@media (max-width: 480px) {
+    .project-cover-hud--corner { width: 20px; height: 20px; }
+    .project-cover-hud--tl,
+    .project-cover-hud--bl { left: 10px; }
+    .project-cover-hud--tr,
+    .project-cover-hud--br { right: 10px; }
+    .project-cover-hud--label  { left: 38px; top: 16px; font-size: 0.6rem; }
+    .project-cover-hud--deployed { right: 38px; bottom: 16px; font-size: 0.6rem; }
+}
+
 .project-body {
     padding: var(--sp-5);
     display: flex;
