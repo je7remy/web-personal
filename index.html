@@ -91,25 +91,46 @@
         </div>
 
         <div class="principal-contenido">
-            <div class="hero-prompt mono">
-                <span class="hero-prompt__symbol">&gt;_</span>
-                <span class="hero-prompt__path">~/PORTFOLIO</span>
-                <span class="hero-prompt__sep">//</span>
-                <span class="hero-prompt__tag">INIT</span>
+            <div class="hero__copy">
+                <div class="hero-prompt mono">
+                    <span class="hero-prompt__symbol">&gt;_</span>
+                    <span class="hero-prompt__path">~/PORTFOLIO</span>
+                    <span class="hero-prompt__sep">//</span>
+                    <span class="hero-prompt__tag">INIT</span>
+                </div>
+                <h1><span class="hero-h1-greet">Hola, soy</span> <span class="hero-h1-name">Jeremy de la Cruz</span></h1>
+                <h2>Backend Engineer &middot; Infrastructure &middot; La Vega, RD</h2>
+                <div class="hero-typed">
+                    <span class="hero-typed__caret mono">&gt;</span>
+                    <!-- id renombrado para neutralizar script.js legacy (typing
+                         viejo). El check 'if (textElement)' del legacy retorna
+                         null y no inicia. La animacion la maneja effects.js. -->
+                    <p id="hero-typed-text" data-typing="initial">building systems that explain themselves —</p>
+                </div>
+                <a href="#skills" class="cta-button hero-cta" data-magnetic>
+                    <span class="hero-cta__label">¿Cómo te puedo ayudar?</span>
+                    <span class="hero-cta__arrow" aria-hidden="true">&rarr;</span>
+                </a>
             </div>
-            <h1><span class="hero-h1-greet">Hola, soy</span> <span class="hero-h1-name">Jeremy de la Cruz</span></h1>
-            <h2>Backend Engineer &middot; Infrastructure &middot; La Vega, RD</h2>
-            <div class="hero-typed">
-                <span class="hero-typed__caret mono">&gt;</span>
-                <!-- id renombrado para neutralizar script.js legacy (typing
-                     viejo). El check 'if (textElement)' del legacy retorna
-                     null y no inicia. La animacion la maneja effects.js. -->
-                <p id="hero-typed-text" data-typing="initial">building systems that explain themselves —</p>
+
+            <div class="hero__media">
+                <div class="hero__avatar">
+                    <div class="hero__avatar-glow" aria-hidden="true"></div>
+                    <div class="hero__avatar-ring" aria-hidden="true"></div>
+                    <img
+                        src="images/jjj.png"
+                        alt="Jeremy de la Cruz — Backend Engineer e Infrastructure"
+                        class="hero__avatar-img"
+                        loading="eager"
+                        decoding="async"
+                        width="320"
+                        height="320"
+                    />
+                    <div class="hero__avatar-corners" aria-hidden="true">
+                        <span></span><span></span><span></span><span></span>
+                    </div>
+                </div>
             </div>
-            <a href="#skills" class="cta-button hero-cta" data-magnetic>
-                <span class="hero-cta__label">¿Cómo te puedo ayudar?</span>
-                <span class="hero-cta__arrow" aria-hidden="true">&rarr;</span>
-            </a>
         </div>
 
         <!-- Indicador de scroll -->

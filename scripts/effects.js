@@ -33,7 +33,7 @@
             });
         }, {
             rootMargin: '0px 0px -10% 0px',
-            threshold: 0.08
+            threshold: 0.15
         });
 
         targets.forEach(function (el) { io.observe(el); });
@@ -82,8 +82,7 @@
 
         const layers = [
             { el: hero.querySelector('.hero-fx__grid'),  depth: 8  },
-            { el: hero.querySelector('.hero-fx__glow'),  depth: 14 },
-            { el: hero.querySelector('.principal-contenido'), depth: 6 }
+            { el: hero.querySelector('.hero-fx__glow'),  depth: 14 }
         ].filter(function (l) { return l.el; });
 
         let raf = 0;
@@ -94,14 +93,8 @@
             tx += (targetX - tx) * 0.08;
             ty += (targetY - ty) * 0.08;
             layers.forEach(function (l) {
-                if (l.el.classList.contains('principal-contenido')) {
-                    /* keep centered with translate(-50%,-50%) */
-                    l.el.style.transform =
-                        'translate(calc(-50% + ' + (tx * l.depth * 0.5) + 'px), calc(-50% + ' + (ty * l.depth * 0.5) + 'px))';
-                } else {
-                    l.el.style.transform =
-                        'translate3d(' + (tx * l.depth) + 'px,' + (ty * l.depth) + 'px,0)';
-                }
+                l.el.style.transform =
+                    'translate3d(' + (tx * l.depth) + 'px,' + (ty * l.depth) + 'px,0)';
             });
             raf = 0;
         }

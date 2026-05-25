@@ -16,9 +16,10 @@
     -webkit-backdrop-filter: blur(18px) saturate(140%);
     border-bottom: 1px solid var(--border-1);
     transition:
-        height var(--dur) var(--ease-out),
-        background var(--dur) var(--ease-out),
-        border-color var(--dur) var(--ease-out);
+        height 350ms var(--ease-out),
+        background 350ms var(--ease-out),
+        backdrop-filter 350ms var(--ease-out),
+        border-color 350ms var(--ease-out);
 }
 
 .site-nav.is-scrolled {
@@ -106,7 +107,7 @@
     box-shadow: var(--glow-sm);
     transform: scaleX(0);
     transform-origin: left;
-    transition: transform var(--dur) var(--ease-out);
+    transition: transform 220ms var(--ease-out);
 }
 
 .site-nav__link:hover,
@@ -236,6 +237,10 @@
 
     .site-nav__link {
         font-size: var(--fs-md);
+        padding: 12px 20px;
+        min-height: 44px;
+        display: inline-flex;
+        align-items: center;
         opacity: 0;
         transform: translateY(10px);
         transition:
